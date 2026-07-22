@@ -1,0 +1,13 @@
+'use strict';
+const { io } = require('socket.io-client');
+const s = io('http://localhost:5050', { transports: ['websocket', 'polling'] });
+const events = [];
+s.on('connect', () => console.log('CONNECTED', s.id));
+s.on('snapshot', (d) => { events.push('snapshot'); console.log('SNAPSHOT system=%s tgNames=%d feed=%d active=%s', d.system, Object.keys(d.tgNames||{}).length, (d.feed||[]).length, d.active); });
+s.on('state', (d) => { events.push('state'); console.log('STATE', JSON.stringify(d)); });
+s.on('talkgroups', (d) => { events.push('talkgroups'); console.log('TALKGROUPS %d', Object.keys((d&&d.tgNames)||{}).length); });
+s.on('history', (d) => { events.push('history'); console.log('HISTORY %d calls', (d&&d.calls||[]).length); });
+s.on('new message', (c) => { events.push('new message'); if (events.filter(e=>e==='new message').length<=3) console.log('LIVE', c.talkgroupNum); });
+s.on('use-direct', (d) => { events.push('use-direct'); console.log('USE-DIRECT', JSON.stringify(d)); });
+s.on('disconnect', () => console.log('DISCONNECTED'));
+setTimeout(() => { console.log('--- summary ---'); const c={}; events.forEach(e=>c[e]=(c[e]||0)+1); console.log(c); s.close(); process.exit(0); }, 12000);

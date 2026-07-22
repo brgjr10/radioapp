@@ -1,0 +1,22 @@
+{
+  "name": "OpenMHz Monitor",
+  "short_name": "OpenMHz",
+  "description": "Real-time radio scanner activity monitor",
+  "start_url": "/m",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0e1116",
+  "theme_color": "#0e1116",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "news"],
+  "lang": "en",
+  "dir": "ltr"
+}

@@ -1,0 +1,73 @@
+name: radioapp
+services:
+    radioapp:
+        command:
+            - node
+            - serve.js
+        environment:
+            ALLOW_PRIVATE_PROXY: "0"
+            NODE_ENV: production
+            NODE_VERSION: 20.20.2
+            OM_ALLOW_DIRECT: "0"
+            OM_API: https://api.openmhz.com
+            OM_SYSTEM: marcs_sc
+            PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+            YARN_VERSION: 1.22.22
+         image: brgjr10/radioapp:latest
+        network_mode: bridge
+        ports:
+            - target: 5050
+              published: "5050"
+              protocol: tcp
+        restart: unless-stopped
+        x-casaos:
+            envs:
+                - container: OM_ALLOW_DIRECT
+                  description:
+                    en_us: ""
+                - container: ALLOW_PRIVATE_PROXY
+                  description:
+                    en_us: ""
+                - container: OM_API
+                  description:
+                    en_us: ""
+                - container: OM_SYSTEM
+                  description:
+                    en_us: ""
+                - container: PATH
+                  description:
+                    en_us: ""
+                - container: NODE_VERSION
+                  description:
+                    en_us: ""
+                - container: YARN_VERSION
+                  description:
+                    en_us: ""
+                - container: NODE_ENV
+                  description:
+                    en_us: ""
+            image: ""
+            ports:
+                - container: "5050"
+                  description:
+                    en_us: ""
+x-casaos:
+    architectures:
+        - amd64
+    author: CasaOS User
+    category: unknown
+    description:
+        en_US: ""
+    developer: unknown
+    icon: ""
+    image: null
+    main: radioapp
+    port_map: "5050"
+    scheme: http
+    tagline:
+        en_US: This is a compose app converted from a legacy app
+    thumbnail: ""
+    tips:
+        custom: This is a compose app converted from a legacy app
+    title:
+        en_US: OpenMHz Radio

@@ -1,0 +1,3112 @@
+County Fire/EMS Dispatch
+County Fire Tac 4
+Countywide School Emergency
+County Fire Tac 1
+County Fire Tac 2
+County Fire Talkaround
+Fire East - Dispatch/Operations
+Common - Operations 1
+Lifeflight Transport
+Common - Operations 2
+Common - Operations 3
+Operations - encrypted
+Fire West - Dispatch/Operations
+Common - Operations 4
+Common - Operations 5
+Fire Paging
+Fire Dispatch
+Fire Tac 3
+Fire Tac 4
+Water Rescue Team
+Pymatuning Ambulance Service Admin
+Village Police Dispatch
+Fire Tactical 1
+South Central Ambulance District operations
+Fire Tactical 2
+South Central Ambulance District Admin
+Fire Tactical 3
+Northwest Ambulance District operations
+Fire Tactical 4
+Northwest Ambulance District Admin
+Fire Tactical 5
+Fire Tactical 6
+EMS Tactical 1
+Tri-County Career Center - Daily operations
+Tri-County Career Center - Alternate
+Ohio University Police
+Ohio University Police Tac
+St. Marys Fire/EMS Dispatch
+School Emergency
+Auglaize FD/EMS Paging
+County Fire Dispatch
+County fire operations 2
+Rural Police Dispatch
+St. Marys Police Dispatch/Fire-EMS Paging
+Village EMS Dispatch
+Sunset Heights VFD (backup)
+Countywide Command 1
+Countywide Law Enforcement Operations
+Countywide Command 2
+County Fire Ground 1
+County Law Enforcement Tac 1
+Countywide Command 3
+County Fire Ground 2
+County Law Enforcement Tac 2
+Countywide Command 4
+Countywide Fire/EMS Operations
+County Law Enforcement Car to Car
+Byrd Township Fire Local
+County Law Enforcement Dispatch
+Countywide School Emergency Radios
+Lake Waynoka Rangers Local
+County Communications Center
+County Fire Ground 3
+County Fire Ground 4
+Emergency Calling to COM PSAPs
+Event 01
+Event 02
+Event 03
+Event 04
+Mutual Aid 05
+Mutual Aid 06
+Mutual Aid 07
+Mutual Aid 08
+Mutual Aid 09
+Mutual Aid 10
+Mutual Aid 11
+Mutual Aid 12
+Mutual Aid 13
+Mutual Aid 14
+Mutual Aid 15
+Mutual Aid 16
+County ODNR Interop
+Countywide Access Point
+Calling Countywide to Dispatch Centers
+Talk Countywide to dispatch centers
+Emergency Services Tac 05
+Emergency Services Tac 06
+Emergency Services Tac 07
+Emergency Services Tac 08
+Emergency Services Tac 09
+Emergency Services Tac 10
+Emergency Services Tac 11
+Emergency Services Tac 12
+Emergency Services Tac 13
+Emergency Services Tac 14
+Emergency Services Tac 15
+Emergency Services Tac 16
+Court Security Main
+Court Security OPS 6
+Law Info - All County Broadcast
+County Jail Primary
+County Jail Operations
+County Jail Calling
+Law Enforcement Tac 05
+Law Enforcement Tac 06
+Law Enforcement Tac 07
+Law Enforcement Tac 08
+Law Enforcement Tac 09
+Law Enforcement Tac 10
+Law Enforcement Tac 11
+Law Enforcement Tac 12
+Law Enforcement Tac 13
+Law Enforcement Tac 14
+Law Enforcement Tac 15
+Law Enforcement Tac 16
+BRICS Radio Technicians to Comm 9
+BRICS  Radio Technicians 2
+Fire Info - All County Broadcast
+Fireground 5
+Fireground 6
+Fireground 7
+Fireground 8
+Fireground 9
+Fireground 10
+Fireground 11
+Fireground 12
+Fireground 13
+Fireground 14
+Fireground 15
+Fireground 16
+Emergency Management 5
+Emergency Management 6
+Law Enforcement Admin Unit Dispatch
+ER Talk
+Liberty Childrens
+The Christ Hospital Medical Center (Liberty Twp)
+Hospital Common 11
+Homeland Security Region 3 - Mass Casualty Incident
+Homeland Security Region 6 - Mass Casualty Incident
+All Hospitals and EMS Units Encrypted
+All Hospitals and EMS Units
+Liberty Twp  Fire Alerting
+Reily Twp  Fire Alerting
+Morgan Twp  Fire Alerting
+Hanover Twp  Fire Alerting
+St Clair Twp  Fire Alerting
+New Miami Fire Alerting
+St Clair Twp EMS Alerting
+Training Tactical
+Training Tactical 2
+Training Tactical 3
+Training Revert 4
+Training Revert 5
+Training Hot Mic
+Training Hot Mic Revert
+Premier Health Police - Atrium Medical Center Campus
+County Fire/EMS Tactical OPS 3
+Sheriff Wide
+Miami University Police Dispatch
+County Dispatch ZULU (Road Patrols)
+Miami U Ops 2
+County Wide Police Desk
+Miami U Ops 3
+County Inquiry
+Lakota Local Schools Emergency
+New Miami Local Schools Emergency
+Talawanda Local Schools Emergency
+County/Village/City/Twp DPW Units to 9COM PSAP
+Miami University Wide
+County Wide
+Liberty Twp Wide
+Reily Twp Wide
+Morgan Twp Wide
+Hanover Twp Wide
+St. Clair Twp/New Miami Local Wide
+New Miami Local Wide
+County Coroner Secondary
+County Public Safety Ops 4
+Covert Ops 5
+Covert Ops 6
+Covert Ops 7
+Covert Ops 8
+Covert Ops 9
+Covert Ops 10
+Covert Ops 11
+Covert Ops 12
+County Commissioners, Garage attendant
+County Commissioners
+County Engineer 2
+County Engineer 3
+County Engineer 4
+County Engineer 5
+County Engineer 6
+Hanover Twp Public Works 2
+Hanover Twp Public Works 3
+Hanover Twp Public Works 5
+Hanover Twp Public Works 6
+Hanover Twp Public Works 7
+Liberty Twp Public Works 2
+Liberty Twp Public Works 3
+Liberty Twp Public Works 5
+Liberty Twp Public Works 6
+Liberty Twp Public Works 7
+Morgan Twp Public Works 2
+Morgan Twp Public Works 3
+Morgan Twp Public Works 5
+Morgan Twp Public Works 6
+Morgan Twp Public Works 7
+Reily Twp Public Works 2
+Reily Twp Public Works 3
+Reily Twp Public Works 5
+Reily Twp Public Works 6
+Reily Twp Public Works 7
+Miami University Operations
+Miami University Operations 6
+Miami University
+Miami University Operations Parking""
+Partners in Prime Transportation 1
+Partners in Prime Transportation 2
+Partners in Prime Transportation 3
+Partners in Prime Transportation 4
+Partners in Prime Transportation 5
+County Regional Transit 1
+County Regional Transit 2
+County Regional Transit 3
+County Regional Transit 5
+Metro Police (MetroParks)
+Miami University Travel Statewide (to 4COM PSAP)
+All County Radios Statewide Access
+Fire Tactical
+Fire Dispatch -Tone outs
+Law Tactical
+Sheriff Operations 1
+South Fire Dispatch
+North Fire Dispatch
+Fire Paging 06
+Sheriff Tactical 1
+County Fire/EMS Paging (all agencies)
+County Fire Departments Operations
+Fireground 4
+Sheriff Dispatch
+Countywide Tactical
+Sheriff Tactical 5
+Fire Tactical 13
+Sheriff Tactical 2
+Sheriff Tactical 3
+Sheriff Tactical 4
+Fire Tactical 14
+Fire Tactical 15
+Fire Tactical 16
+Wittenberg University Police Dispatch
+German Twp Police
+Fire Paging East
+Fire Paging West
+Fire Tactical 17
+All Schools Emergency
+Fire Command Talk Around
+Fire Ground 4
+Fire Ground 5
+Fire Ground 6
+Fire Ground 7
+Fire Ground 8
+Fire Ground 9
+Fire Ground 14
+Fire Ground 15
+Fire Ground 16
+Fire Ground 17
+Fire Ground 18
+Fire Ground 19
+Countywide MAYDAY
+SRWW Joint Fire District Dispatch
+SRWW Joint Fire District Ch. 2
+County EMS Operations
+Police Helpdesk
+Airport Fire
+Sheriff Secure
+Village Police Secure
+Village Police Detectives
+Police Administration
+County Detectives
+Sheriff Detectives
+Areawide
+Areawide Hailing
+Emergency Management
+County Court Operations
+Juvenile Probation
+Adult Probation
+County Coroner
+Municipal Court
+Mutual Aid 01
+Mutual Aid 02
+Mutual Aid 03
+Mutual Aid 04
+Incident Command
+Countywide Special Events
+Non-Public Safety access to Comm center or Public Safety units
+County Road Department
+All Township Road Departments
+Tri-County Ambulance
+Drug Task Force Ch. 2
+Fire Tac 2
+EMS Dispatch
+Engineer
+EMS Operations
+EMS Operations 2
+Rescue (sheriff, fire, EMS interop)
+Sheriff Special Response Team
+Fire and EMS Paging
+Fire Operations Ch. 2
+County Fire Operations 1
+HHCC Fire Alternate Dispatch
+Countywide Tactical 1
+Westcom Fire Dispatch
+Rail Control
+University Heights Fire
+Shaker Heights Fire
+Countywide Tactical 2
+Westcom Fire 2
+Police Dispatch
+Countywide Tactical 3
+Westcom Fire 3
+Mayfield Village Fire Dispatch
+Mayfield Heights Fire Dispatch
+Countywide Tactical 4
+Countywide Tactical 5
+Countywide Tactical 6
+Police - Event
+Countywide Tactical 7
+Countywide Tactical 8
+Countywide Tactical 9
+Hillcrest Area Police 1 / Dispatch
+Hillcrest Area Police 2
+Police Tac 1
+Hillcrest Area Police 3
+Countywide Tactical 10
+Hillcrest Area Police 4
+Hillcrest Area Police 5
+Police Tac 2
+Hazmat 1
+Hazmat 2
+Hazmat 3
+Hazmat 4
+Hazmat 5
+Triskett District
+Hillcrest Region North Fire Ch.3 (fire prevention use)
+Shaker Hts, Eastcom, Hillcrest Region North Fire Staging
+Yard
+Rail Maintenance
+Hayden District
+Paratransit District
+NASA Glenn Research Center - Security
+Operations 1
+Operations 2
+Supervisors 1
+Operations 3
+Operations 4
+Special Operations 1
+Westshore Law Dispatch
+Supervisors 2
+Westshore Law Ch. 2
+Special Operations 2
+North Olmstead Schools Emergency
+Westshore Enforcement Bureau Dispatch
+SPAN 3 Mayfield Village PD 3
+Westshore Enforcement Bureau Operations
+Westshore Enforcement Bureau TAC-1
+Mayfield Hts Police Dispatch
+Eastcom Fire Paging
+Orange Fire Paging
+Chagrin Fire Paging
+Woodmere Fire Paging
+North Randall Fire Paging
+Lyndhurst Fire Paging
+Olmsted Fire Dispatch
+Mayfield Hts Police 2
+Westcom HAZ-MAT
+Westcom RIT
+Community Care Ambulance - Cuyahoga
+Chagrin Valley Police Dispatch West Ch. 1
+Chagrin Valley Dispatch - Fire Tac 1
+Chagrin Valley Dispatch - Fire Tac 2
+Chagrin Valley Police Dispatch West Ch. 2
+Chagrin Valley Dispatch - Fire Tac 3
+Chagrin Valley Dispatch - Fire Tac 4
+Chagrin Valley Dispatch - Fire Tac 5
+Chagrin Valley Police Tac 1
+Chagrin Valley Police Dispatch East Ch. 1
+Chagrin Valley Police Tac 2
+Chagrin Valley Police Tac-3
+Chagrin Valley Police Dispatch East Ch. 2
+All LE Only
+County Wide Tactical
+County Fire/EMS Paging
+Tri-Village Rescue Paging
+Sheriff Tactical
+Fire/EMS Dispatch
+Fire/EMS Tactical 1
+Fire/EMS Tactical 2
+Fire/EMS Tactical 3
+Sheriff - Major Crimes Unit Ch. 1
+Fire Operations 1
+Sheriff Tac 1
+Sheriff - Major Crimes Unit Ch. 2
+Sheriff Tac 2 (Also used by Dog Warden)
+Fire Operations 2
+Fire Operations 3
+EMS Operations 1
+Engineer 1
+Engineer 2
+Fire Alert
+County Sheriff Dispatch
+County Fireground
+County Sheriff Event
+County Law Tac
+County EMS Dispatch
+Head Start - Common
+County Engineer Main
+County Sheriff Tactical
+Concord-Greene Fireground
+Head Start - Dispatch
+County communications service
+MedFlight Statewide Hailing
+MedFlight Helicopter Operations
+MedCare Central
+MedFlight Helicopter Alternate
+MedCare North
+Gahanna Police Dispatch
+MedFlight 7 / HealthNet 3 (Huntington) Operations
+Mercy Health Medical Transportation - Dispatch
+Medflight MICU Operations
+MedFlight Tactical 1
+Gahanna Police - Events
+MedFlight Tactical 2
+Gahanna Parks & Recreation
+Gahanna Police - Car-to-car
+Red Cross 2
+Gahanna Police - Tac
+MedCare South
+Red Cross 3
+Bexley Police Dispatch
+MedCare Alternate
+Bexley Police Tac 1
+Red Cross 4
+Bexley Police Tac 2
+Red Cross 5
+Whitehall Police Dispatch
+Whitehall Police Tac 1
+Grandview Heights Police Dispatch
+Whitehall Police - Events
+Whitehall Police Tac 2
+Grandview Heights Police Tac 1
+Grandview Heights Police Tac 2
+COIRS Detectives Interop
+Ohio State School for the Blind/Ohio State School for the Deaf - Common Channel
+Grandview Heights Police-Fire Interop
+911 Operations
+Common 2
+Sheriff - EMS Operations
+Jail Operations
+Fire Paging 1
+Police Car-to-Car
+Local Police Dispatch
+County Law Common 1
+County Jail
+County Law Common 2
+Munson / Russell Fire Dispatch
+Geauga Medical Center ER
+EMA 1
+EMA 2
+County Wide ALL TALK
+The Bessie Benner Metzenbaum Center
+West Geauga Schools
+Berkshire Schools
+Cardinal Schools
+Ledgemont Schools
+Kenston Local Schools
+West Geauga Schools Ch. 2
+Red Cross
+Hambden Twp Road Dept
+Munson Twp Road Dept
+Geauga Park District Rangers A
+Holden Arboretum Police A
+Holden Arboretum Police B
+South Russell Police A
+South Russell Police B
+Russell Police A
+Russell Police B
+County Sheriff A
+County Sheriff B
+Hambden Fire A
+Hambden Fire B
+Russell Fire A
+Russell Fire B
+Auburn Fire A
+Auburn Fire B
+Munson fire A
+Munson Fire B
+Geauga Co Fire Investigative Unit
+Radio Service
+Community Care Ambulance - Geauga
+Drug Task Force Ops 1
+Sheriff Ops 1
+Drug Task Force Ops 2
+Beavercreek FD Station 60 PA
+Sheriff Ops 2
+Drug Task Force Tactical
+Regional Response Team Ops 1
+Sheriff Ops 3
+Countywide 1
+Regional Response Team Ops 2 - Hostage Negotation
+Sheriff Detective
+SWAT 1
+Countywide Law Tac 1
+Sheriff Jail
+Regional Response Team Ops 3
+County Fire Tactical 1
+Sheriff Adult Detention
+SWAT 2
+Countywide Law Tac 2
+Sheriff Court Services
+SWAT 3
+SWAT Tactical
+Coroner Ops 1
+County Fire Tactical 2
+Countywide Detectives
+Countywide 2
+County Fire Tactical 3
+Countywide Law Tac 3
+Countywide 3
+Greene Fire East Dispatch
+County Fire Tactical 4
+Countywide Law Tac 4 (currently used by SOIN Hospital Security)
+Countywide 4
+County Fire Tactical 5
+Parks Ops 1
+Countywide Law Tac 5
+Parks Ranger
+County Fire Tactical 6
+Countywide Law Tac 6
+Parks Maintenance
+County Fire Tactical 7
+Parks Nature
+Beavercreek Fire Dispatch
+County Fire Tactical 8
+Beavercreek Twp Service Dispatch
+Parks Programs
+County Fire Tactical 9
+Beavercreek Fire Ops 1
+County Fire Tactical 10
+Beavercreek Fire Prevention
+County Fire Tactical 11
+Beavercreek Twp Services Operations
+County Fire Tactical 12
+Beavercreek Police Dispatch
+County Fire Tactical 13
+Beavercreek Ops 1
+County Fire Tactical 14
+Sheriff Special Detail
+County Fire Tactical 15
+County Fire Tactical 16
+Beavercreek Police Detectives
+Beavercreek Police Administration
+Sheriff Jail All-Call
+Greene Central Services Dispatch
+Central State University Police Ops 1
+Central State University Police Dispatch
+Miami Twp Fire Ops 1
+Silvercreek Twp Fire Ops 1
+Regional Response Team Tactical
+Sheriff Jail Ops 1
+Beavercreek City Schools Emergency
+W/S Electronics demonstration radios
+Sheriff Jail Ops 2
+Police Ops
+Campus Safety
+Sheriff Adult Detention Ops 1
+Police Admin
+Greene Memorial Hospital EMS to ER
+Police 2
+Service 1
+Sheriff Adult Detention Ops 2
+SOIN Medical Center ER
+Wright-Patterson AFB Fire Dispatch
+Service 2
+Wright-Patterson AFB Fire Tac 1
+Sheriff Tactical Ch.1
+Sheriff - Jail, Courthouse Sec, Prisoner Transports
+Fire Operations 4
+United Ambulance Services
+Fire Operations 5
+UC Mobile Care Auxiliary 1
+UC Mobile Care Auxiliary 2
+UC Air Care Auxiliary 1
+UC Air Care Dispatch
+UC Air Care Auxiliary 2
+UC Mobile Care Administration
+UC Air Care Auxiliary 3
+UC Mobile Care Car to Car
+UC Air Care Auxiliary 4
+UC Mobile Care Dispatch
+UC Mobile Care Special Events
+Fire Dispatch East
+Fire Dispatch West
+Fire Dispatch Central
+Valley Fire Dispatch
+Fire Alerting West
+Fire Ground 10
+MAYDAY Emergency
+Fire Alerting East
+Fire Ground 20
+Fire Ground 21
+Fire Ground 22
+Storm Response West
+Storm Response East
+Fireground 26
+Fire Administration
+Hospital Emergency Net
+East Law Dispatch
+West Law Dispatch
+Central Law Dispatch
+Spare Law Dispatch
+Law East Talkaround Group
+Law West Talkaround Group
+Law Central Talkaround Group
+Area Wide 1
+Area Wide 2
+Area Wide 3
+Area Wide 4
+Area Wide 5
+Area Wide 6
+Area Wide 7
+Area Wide 8
+Area Wide 9
+Area Wide 10
+Area Wide 11
+Area Wide 12
+Area Wide 13
+Area Wide 14
+Area Wide 15
+Area Wide 16
+Area Wide 17
+Area Wide 18
+Area Wide 19
+Area Wide 20
+Area Wide 21
+Area Wide 22
+Area Wide 23
+Area Wide 24
+Area Wide 25
+Area Wide 26
+Law Enforcement Administration
+Law Inquiry
+Intensive Supervision Probation
+Probation Electronic Monitoring Unit
+Probation General
+Amberley Village Police
+Amberley Village Fire
+Amberley Village 3
+31 American Red Cross 1
+31 American Red Cross 2
+31 American Red Cross 3
+Anderson Township Fire
+Anderson Township Fire 2
+Anderson Township Service
+Anderson Township Park Police 1
+Anderson Township Park Police 2
+Anderson Township Park Police 3
+BAILIFF1
+BAILIFF2
+BAILIFF3
+Blue Ash Police
+Blue Ash Fire
+Blue Ash City
+County Health Department 1
+County Health Department 2
+County Health Department 3
+Cheviot Police
+Cheviot Fire
+Cheviot Service
+COM VAN 1A
+COM VAN 1B
+COM VAN 1C
+Coroner 1
+Coroner 2
+Coroner 3
+Sheriff - Jail Annex
+Sheriff - Corrections Emergency Response Team
+Sheriff - Corrections All
+Crosby Township Fire
+Crosby Township All Call
+Crosby Township
+Deer Park-Silverton Joint Fire
+Deer Park Police
+Deer Park Service
+Delhi Township Police
+Delhi Fire
+Delhi Service
+Drug Abuse Reduction Task Force 1
+Drug Abuse Reduction Task Force 2
+Drug Abuse Reduction Task Force 3
+Elmwood Place Police
+Elmwood Place Fire
+Elmwood Place Service
+County Emergency Management 1
+County Emergency Management 2
+County Emergency Management 3
+County Engineer 1
+Evendale Police
+Evendale Fire
+Evendale Service
+HCFD 1
+HCFD 2
+HCFD 3
+Fairfax Police 1
+Fairfax Police 2
+Little Miami Fire Rescue
+Glendale Police
+Glendale Police 2
+Glendale Fire
+Golf Manor Police
+Golf Manor Fire
+Golf Manor Police 2
+Greenhills Police
+Greenhills Fire
+Greenhills 3
+Indian Hill Rangers
+Indian Hill Rangers 2
+Indian Hill Service
+Jobs and Family Services - Maintenance
+Jobs and Family Services - Security
+Jobs and Family Services - Mutual Aid/Talk Around
+Juvenile Court 1
+Juvenile Court 2
+Juvenile Court 3
+Lincoln Heights Police (Defunct - Reserved for future use)
+Lincoln Heights Fire
+Lincoln Heights Service
+Lockland Police
+Lockland Fire
+Lockland Service
+Madeira Police
+Madeira Service
+Madera-Indian Hill Fire
+Mariemont Police
+Mariemont Fire
+Mariemont Service
+Metropolitan Sewer District 1
+Metropolitan Sewer District 2
+Metropolitan Sewer District 3
+Metropolitan Sewer District 4
+Metropolitan Sewer District 5
+Metropolitan Sewer District 6
+Metropolitan Sewer District 7
+Metropolitan Sewer District 8
+Metropolitan Sewer District 9
+Metropolitan Sewer District 10
+Miami Township Fire
+Miami Township Administration
+County Maintenance Staff
+Montgomery Police
+Montgomery Fire
+Montgomery Citywide
+Mt St Joseph Public Safety
+Mt Healthy Police
+Mount Healthy Fire
+Mount Healthy Service
+Newtown Police
+North College Hill Police
+North College Hill Fire
+North College Hill Service
+Regional Enforcement Narcotics Unit 1
+Regional Enforcement Narcotics Unit 2
+Regional Enforcement Narcotics Unit 3
+County Park District 1
+County Park District 2
+County Park District 3
+System Radio Service 1
+System Radio Service 2
+System Radio Service 3
+Reading Police
+Reading Fire
+Reading Citywide
+Sharonville Police
+Sharonville Fire
+Sharonville Service
+Sheriff - Fugitive Warrants
+Sheriff - Organized Crime
+Sheriff - Criminal Investigations 1
+Sheriff - Fire Interop
+Sheriff - Traffic
+Sheriff - Tac 2
+Sheriff - Special Event
+Silverton Service
+Sheriff - Special Response Team 1
+Sheriff - Special Response Team 2
+Sheriff - Special Response Team 3
+Springdale Police
+Springdale Fire
+Springdale Service
+St Bernard Police
+St. Bernard Fire
+St. Bernard Service
+County Police Association SWAT 1
+County Police Association SWAT 2
+County Police Association SWAT 3
+County Police Association SWAT 4
+Terrance Park Fire
+Miami East Fire
+Urban Search and Rescue 1
+Urban Search and Rescue 2
+Urban Search and Rescue 3
+Valley Fire
+Valley Police
+Valley Talk Around Group
+Whitewater Township Fire 1
+Whitewater Township Fire 2
+Whitewater Township Fire 3
+Woodlawn Police
+Woodlawn Fire
+Woodlawn Service
+Wyoming Police
+Wyoming Fire
+Wyoming Service
+Sheriff - Jobs and Family Services 1
+County-wide Pursuit
+Dispatcher Console
+Sheriff - Courthouse
+Sheriff - Justice Center
+Sheriff - Correction Supervisors
+Inter-PSAP Calling
+Communication Centers All Call
+Boone County, KY Interop
+Dearborn County, IN Interop
+Command 400 Interop
+Investigation 600 Interop
+County Government Campus Security All Call
+Used for Activation of the Hospital Radios
+Used for voice announcements to all Hospitals
+Mutual Aid 1
+Mutual Aid 2
+Mutual Aid 3
+Mutual Aid 4
+Mutual Aid 5
+Mutual Aid 6
+Mutual Aid 7
+Mutual Aid 8
+Mutual Aid 9
+Mutual Aid 17
+Mutual Aid 18
+Mutual Aid 19
+Mutual Aid 20
+Mutual Aid 21
+Mutual Aid 22
+Mutual Aid 23
+Mutual Aid 24
+Mutual Aid 25
+River Emergency
+All County Broadcast - County
+County Operations 2
+School Emergency Alternate
+County Operations 1
+County Operations 3
+Fire/EMS Paging
+County Paging
+Fire Operations East
+Fire Operations West
+Fireground 1
+Fireground 2
+Sheriff Tac 2
+Fireground 3
+Highway Department (County Garage)
+Countywide Event
+Law Tac
+EMS Dispatch / Paging
+Law Dispatch
+County Fire and EMS Dispatch
+FIRE/EMS Special Events
+Fire/EMS Operations 4
+Fire/EMS Operations 2
+Fire/EMS Operations 1
+Fire/EMS Operations 5
+Fire/EMS Operations 3
+County Fireground 1
+County Fireground 2
+County Fireground 3
+Paint Creek Joint Fire District - Operations
+Fire TAC 1
+Fire TAC 2
+Fire / EMS Paging
+Fire TAC 3
+Fire TAC 4
+Citizens Ambulance
+EMS Paging
+WV Northern Panhandle 911 Patch
+Countywide Disaster 1
+Countywide Training 1
+Countywide Disaster 2
+Countywide Training 2
+Countywide Disaster 3
+Countywide Events 1
+Command ATG
+Countywide Training 3
+Division 1 EMS Tactical
+Division 3 EMS Dispatch
+Fire ATG
+Division 2 EMS Tactical
+Fire EOC
+Countywide Events 2
+Division 3 EMS Tactical
+Division 1 Fire Dispatch
+Air Operations
+Division 1 EMS Dispatch
+Division 2 Fire Dispatch
+Division 1 Fire Tactical
+EMS ATG
+Division 2 EMS Dispatch
+Division 3 Fire Dispatch
+Division 2 Fire Tactical
+EMS EOC
+Tanker Task Force
+Rapid Intervention Team
+Division 3 Fire Tactical
+Technical Rescue Team
+EMS to Trinity Medical Center West
+EMS to Weirton Medical Center
+County Jail - Central Control
+Division 1 Law Tactical
+Division 1 Law Dispatch
+Division 2 Law Tactical
+Division 2 Law Dispatch
+Division 3 Law Tactical
+Division 3 Law Dispatch
+Law ATG (announcements / bolos)
+Law EOC
+Sheriff 2
+OSP Post 41 patch
+Pursuit
+Sheriff 3
+Saline Twp Police
+Wintersville Police
+Buckeye Local Schools
+Indian Creek Schools
+Courthouse Security / Duress Alarms
+Wintersville Fire and EMS
+West Virginia Fire Interop
+West Virginia EMS Interop
+West Virginia Law Interop
+Engineer - Supervisor
+Engineer - Office Complex
+Concord / Leroy Fire
+Fairport Police 1A
+Kirtland Police 1A
+Lakeland Community College Police
+Lake Metroparks Rangers 1A
+Waite Hills Police 1A
+Willowick Police 1A
+Lake Co Jail 1
+Lake Co Jail 2
+Lake Co Jail 3
+LakeHealth - TriPoint Medical Center ER
+Lake Health - West Medical Center ER
+Laketran - Community Response Transit
+Laketran - Fixed Bus Routes
+Court Bailiff
+Concord Twp Services (Roads)
+EMS TAC
+Village PDs Dispatch
+Village PDs Tactical
+Emergency Operations Center
+Courtesy Ambulance
+Fire and EMS Dispatch
+County Sheriff Tactical 1
+Sheriff - Special Events
+Licking Rural Electrification 2
+Dog Warden
+Countywide Tac 1
+Fire/EMS Paging (Patched to 155.580)
+Robinaugh EMS
+County Jail operations
+ProMedica ground units dispatch/ops
+Mercy Lifestar - Dispatch/Operations
+Promedica - Air Ops
+Sheriff Event
+Bender Communications
+Drug Taskforce
+Countywide Tac 2
+Countywide Tac 3
+Countywide Tac 4
+Countywide Tac 5
+Countywide Tac 6
+Countywide Tac 7
+Countywide Tac 8
+Law - Mutual Aid / Tactical
+EMS - Alternate
+Fire - Tac / Operations
+Wright State University - Mercer Campus
+Countywide Operations 1
+Upper Valley Medical Center EMS to ER
+Law Enforcement Dispatch / Ops 1
+Law Enforcement Dispatch / Ops 2
+Law Enforcement TAC 1
+Law Enforcement TAC 2
+Law Enforcement TAC 3
+Law Enforcement TAC 4
+Public Safety
+County TAC-56
+County TAC-57
+County Tac 54
+County Tac 55
+Fire/EMS Dispatch 1
+Fire/EMS Dispatch 2
+Hazmat Ops 2
+EMA-2
+County Ops 40
+Elizabeth Twp Fire Ops 45
+Lockington Fire Ops 75
+County Tac 52
+County Tac 53
+Union Twp EMS Ops 25
+Upper Valley Medical Center - Security
+County Ops 58
+County Ops 59
+County Park District - Dispatch
+County Park District - Tactical
+West Central Juvenile Detention Center
+County Engineer Ops 1
+County Engineer Ops 2
+County Engineer Ops 3
+County Engineer Ops 4
+EMA-1
+EMA-3
+EMA/HazMat Response
+Hazmat Ops 3
+County Fire/EMS Paging (patched to 154.190)
+Kettering Mobile Care MICU Channel (Buckeye Ambulance)
+Community EMS of Ohio 1
+Kettering Mobile Care MICU Dispatch (Buckeye Ambulance)
+Community EMS of Ohio 2
+P&R Radio Techs
+Chesterhille Fire
+Fire / EMS Dispatch
+EMS Tactical
+Law Tactical 1
+Rescue
+County Fire Operations 2
+County Fire Operations 3
+County Fire Operations 4
+Community Ambulance 1
+Fire Mutual Aid
+Falls Twp VFD
+Noble Local School District
+Ops 5
+Ops 3
+Ops 2
+Ops 4
+Fire/ EMS Ops
+County Fire Operations
+Water Shuttle Operations
+Fire Operations - North
+Fire Operations - South
+Fire/EMS ops
+Emergency Management Agency
+Southern Local School District
+EMS operations
+Countywide law enforcement events/tactical 2 (enc)
+Fire/EMS Response (was FD65EMS)
+Scioto Twp Fire Local Operations
+Special Detail 8
+Countywide law enforcement events/tactical 1
+County jail
+County law dispatch alternate
+County EMA Ops 1
+Fire/EMS-Law Common
+Courthouse Security / Duress Alarm testing
+Westfall Local Schools SRO
+Westfall School District buses
+Teays Valley Local Schools - SRO
+Radio Technicians
+Pickaway Twp Fire Local Operations
+Pickaway Twp FD Fireground
+Pickaway Twp FD Tac
+Southwest Pickaway Fire District Fireground
+Southwest Pickaway Fire District Tac
+Scioto Township FD Fireground
+Scioto Township FD Tac
+Bloom Twp FD Fireground
+Bloom Twp FD Tac
+Clearcreek Twp FD Fireground
+Clearcreek Twp FD Tac
+Saltcreek Twp VFD Fireground
+Saltcreek Twp VFD Tac
+Tanker Operations 1
+Tanker Operations 2
+County EMA Ops 2 (enc)
+County EMA Ops 3 (enc)
+County Common
+Countywide Emergency
+Countywide Events 3
+Countywide Events 4
+Countywide Events 5
+Countywide Events 6
+Countywide Events 7
+Countywide Events 8
+Countywide Events 9
+Countywide Events 10
+Southwest Pickaway Fire District Local Operations
+Clearcreek Township Fire/EMS Ops
+Saltcreek Twp VFD Local Operations
+County dog warden
+County Engineer primary
+County Engineer secondary
+County Engineer tertiary
+Highway Common (countywide)
+Saltcreek Twp Roads
+Washington Twp Roads
+Pickaway Community Action (PICCA) Transit
+County Head Start
+Darbyville Services
+Darbyville Utilities
+Darbyville Common
+NEOMED Police Secondary
+Sheriff  Dispatch
+Sheriff Tac 4
+Probation
+Sheriff Courthouse
+Brimfield Fire Dispatch
+Law Enforcement Car-to-Car
+NEOMED Police
+Fire 2
+Garfield Local Schools - Bus
+Sheriff Dispatch 2
+Sheriff Courthouse Security Detail
+Schools Common
+Highway Department
+Vasu Communications - Test / Demo
+Sheriff Tac 3
+Lexington Police Dispatch
+Municipal Court Baliffs
+Countywide Fire/EMS Paging announcement group
+Huntington Township Fire/EMS Paging
+Automated Alarm Testing
+Twin Township Fire/EMS Paging
+Union Township FD local
+Liberty Township Fire/EMS Paging
+Union Township Fire/EMS Paging
+Scioto Township Fire/EMS Paging
+Paxton Township Fire/EMS Paging
+Concord Township Fire/EMS Paging
+Juvenile Detention Center
+Countywide Operations 2
+TRIPS Public Transportation Program
+EMS Admin
+Fire Paging 3
+EMA TAC 1
+New Boston Fire/Police Dispatch
+EMS TAC 1
+School Emergency Alert
+County Fire OPS 8
+Traffic Control
+Countywide
+Erie Valley Fire and Rescue 2
+Emergency Management Agency 1
+Emergency Management Agency 2
+Fire Dispatch West Ch.1
+Pro Football Hall of Fame - Grounds
+HAZMAT
+Incident Management Team
+Comms between Dispatch Centers
+Lawrence Twp Fire Dispatch
+Lawrence Twp Fire 2
+Lexington Twp Fire Dispatch
+Malone University Police
+Marlboro Police Dispatch
+Marlboro Twp Fire Dispatch
+Sandy Creek Joint Fire District Dispatch
+Sandy Creek Joint Fire District Tac
+Mohawk Valley Joint Fire District Paging
+Mohawk Valley Joint Fire District Dispatch
+Mohawk Fire
+Nimishillen Twp Fire Dispatch
+Osnaburg Twp Fire 1
+Osnaburg Twp Fire 2
+Park Rangers (November Romeo)
+Plain Township Fire Dispatch
+Plain Township Fire 2
+Plain Twp FD / Stark Co Sheriff Interop
+SARTA Fixed Routes
+SARTA Proline
+SARTA Supevisor
+County Engineer
+Sanitary Engineering
+Sheriff - Metro
+Sheriff - Inquiry
+Sheriff - Jail
+Sheriff - Civil
+Sheriff - CERT
+Sheriff - Staff
+South Police Dispatch
+Stark State College - Campus Security Dispatch
+Stark State College - Campus Security 2
+Walsh University Police Dispatch
+Washington Twp Fire Dispatch
+Washington Twp Fire 2
+Quad EMS
+MAC Call
+MAC 2 Fire
+MAC 3 Fire
+MAC 4 Fire
+MAC 5 Fire
+MAC 06 Fire
+MAC 07 Fire
+MAC 08 Fire
+MAC 09 Fire
+MAC 10 Fire
+MAC 11 Fire
+MAC 12 Fire
+MAC 01 Law
+MAC 02 Law
+MAC 03 Law
+MAC 04 Law
+Spare / Event / Training / Demo 1
+Spare / Event / Training / Demo 2
+Road 1
+Sheriff - Metro 2
+Sheriff - Special Detail
+Fairless Local Schools Emergency
+Lake Local Schools Emergency
+Marlington Local Schools Emergency
+Northwest Local Schools Emergency
+Plain Local Schools Emergency
+R.G. Drage Career Technical Center Emergency
+Sandy Valley Local Schools Emergency
+Tuslaw Local Schools Emergency
+American EMS Ch. 1 Medics
+American EMS Ch. 2 Medics
+American EMS Ch. 3 Ambulettes
+SECC Police 1A
+Summa Police
+METRO RTA Emergency Button
+Board of Education - Ellet
+Valley JFD Dispatch
+Valley JFD Fireground 1
+Valley JFD Fireground 2
+Fire Ops Southwest
+Fire Ops Southeast
+Fire Ops Central
+Fire Ops Northeast
+Fire Ops Northwest
+Staley Technologies - Radio Repair
+MWCD - Recreation
+MWCD - Atwood Lake
+North Police Departments
+MWCD - Tappan Lake
+MWCD - Seneca Lake
+MWCD - Charles Mill Lake
+MWCD
+Society for Equal Access Independent Living Center
+Traffic 1
+MWCD - Engineering
+Horizons Inc
+South Fire Operations
+Sandy Valley Police Dispatch
+Countywide Fire/EMS Paging
+Smith Ambulance Paging
+Indian Valley Fire Operations
+York Township Fire Paging
+Twin City Hospital ER
+Sheriff Ch.2
+Twin City Police Dispatch
+Smith Ambulance Private
+Emergency Button
+Twin City Fire Operations
+Jail
+Rush Township Fire Paging
+South Police Departments
+HAZMAT Team Paging
+Smith Ambulance Operations
+Swiss Valley Fire Operations
+Water / Sewer
+Village Police Departments
+North Fire Operations
+Fire/EMS to UCMH
+Fire-Police Common
+Sheriff Investigations
+Sheriff Talk Around
+County Fire paging
+All Fire Talk Groups
+Telecom Test
+Fire All Call
+Carlisle City Government
+Carlisle Fire Command
+Carlisle Fire Ground
+Carlisle Fire Operations
+Carlisle Fire Public Safety
+Carlisle Police Channel 1
+Carlisle Police Channel 2
+Carlisle Road Department
+Carlisle Fire Special Events
+Carlise Fire Alert
+Clearcreek Twp Police Administration
+Clearcreek Twp Fire Command
+Clearcreek Twp Fire Operations 1
+Clearcreek Twp Fire Operations 2
+Clearcreek Twp Police
+Clearcreek Public Safety
+Clearcreek Twp Maintenance Department 1
+Clearcreek Twp Maintenance Department 2
+Clearcreek Township Fire Alert
+U.S. Army Corps of Engineers (Caesar Creek Lake Dam)
+Coast Guard Operations
+Harlan Township Fire Ground
+Harlan Twp Public Safety
+Harlan Township Maintenance Department
+Harlan Township Fire Alert
+JEMS Command
+JEMS Fire Alert
+Mainville Police 1
+Mainville Police 2
+Mainville Road Department
+Massie Township Fire Ground 1
+Massie Township Fire Ground 2
+Massie Township Fire Alert
+Massie Township Public Safety
+Massie Twp Road Department
+Caesars Creek Rangers (ODNR Enforcement)
+Turtlecreek Twp Road and Bridge 1
+Turtlecreek Twp Road and Bridge Private
+Turtlecreek Twp Fire Ground
+Turtlecreek Twp Fire Training
+Turtlecreek Twp. Fire Alert
+Union Twp Fire Operations
+Union Twp Fire Ground
+Union Towship Road Departmentn
+Union Twp. Fire Alert
+Prosecutors Operations
+Telecom
+Telecom Ops
+Telecom Incident
+Telecom Tac 1
+Telecom Tac 2
+County Communications
+County Fire Hailing
+County Fire MAYDAY 1
+County Fire MAYDAY 2
+County Fire Primary
+County Fire Alert
+County Fire Secure Data
+Schools Emergency
+System Helpdesk
+Inter-PSAP
+Drug Task Force 2
+Drug Task Force 1
+Police Hailing
+Police Inquiry
+Police Primary 1 (North)
+Police Primary 2 (South)
+83 Special Weapons and Tactics Operations
+Law Tactical 2
+Law Tactical 3
+County Private
+County Supervisors
+County National Incident Management System ops
+Countywide Tac 9
+Countywide Tac 10
+Countywide Tac 11
+Countywide Tac 12
+Countywide Tac 13
+Countywide Tac 14
+Countywide Tac 15
+Countywide Tac 16
+Countywide Tac 17
+Countywide Tac 18
+Countywide Tac 19
+Countywide Tac 20
+Countywide Tac 21
+Emergency Management Agency 3
+County Board of Developmental Disabilities
+County Childrens Services
+County Commissioners 1
+County Facilities Managment
+Coroner
+County Dog Warden 1
+County Dog Warden 2
+County Engineer 5 Supervisors Only
+County Headstart
+County Health Department
+County Human Services
+County Special Events
+County Transit
+County Water Department 1
+Sheriff 1
+Sheriff 3 Court Services
+Sheriff - Criminal Investigation Division
+Road Department Tactical
+Transportation Tactical
+Atrium Medical Center
+Police/Fire Link
+Facilities Management
+Facilities Custodian
+Facilities Grounds
+Facilities Electric
+Facilities Plumbing
+Facilities HVAC
+Facilities Carpentry
+Mutual Aid Tac 15
+Mutual Aid Tac 16
+Mutual Aid Tac 17
+Mutual Aid Tac 18
+Mutual Aid Tac 19
+Mutual Aid Tac 20
+Mutual Aid Tac 21
+Mutual Aid Tac 22
+Mutual Aid Tac 23
+Mutual Aid Tac 24
+Mutual Aid Tac 25
+Mutual Aid Tac 26
+Mutual Aid Tac 27
+Mutual Aid Tac 28
+Mutual Aid MAYDAY 1
+Mutual Aid MAYDAY 2
+Mutual Aid MAYDAY 3
+Mutual Aid MAYDAY 4
+Regional Road/Public Works Tac
+Regional Transportation Tac
+Regional Non-Emergency Special Events Tac
+Southwestern Ohio, Southeastern Indiana, Northern Kentucky Regional Communications
+County Jail Backup
+AuxComm
+Sheriff - Jail transports
+Beebe area fire operations
+Norwayne Local Schools
+Fire Dispatch 2
+EMS
+Fire Dispatch 1
+Sheriff TAC
+Events
+Tactical 1
+Fleet Services
+Post 59 (Mt Gilead) Dispatch
+Ohio Turnpike East Ops
+Ohio Turnpike West Ops
+Post 7 (St Clairsville) Tac
+Post 59 (Mt Gilead) Tac
+OSP District 4 events
+Ohio Investgative Unit Primary
+OSP F3
+Office of Information Services - General Headquarters
+Office of Information Services - Southwest
+OSP District 6 events
+OSP Academy
+Post 07 (St Clairsville) Dispatch
+District Radio Technicians
+Aviation
+Ohio State Fair - First Aid
+OSP Academy/State Fairgrounds post
+Special Event 1 (Expo Center and OSU)
+Ohio Exposition Center (Fairgrounds) post
+Special Event 2 (Expo Center and OSU)
+State Capitol Complex Security
+OSP Special Response Teams
+OSP Special Response Teams Tac 1
+Ohio Turnpike East Tac 1
+Ohio Turnpike West Tac 1
+OSP District 6 Events
+Shipley Bldg (General HQ) Dispatch
+Event 1
+Ohio Turnpike East Tac 2
+State Capitol Complex Security Tactical
+Motor Carrier Enforcement
+Maintenance East
+Toll Plazas - East
+Toll Plaza - West
+Maintenance West
+Maintenance Tac 1
+Maintenance Tac 2
+Watercraft Enforcement - Alum Creek Region
+Watercraft Enforcement - Lake Erie Region
+Wildlife Enforcement - Lake Erie Region
+Parks and Recreation - Maintenance, Northwest
+Wildlife Enforcement - District 2 (NW)
+Northeast Operations
+Wildlife Enforcement - District 3 (NE)
+Southwest Operations
+Enforcement - Northeast Calling
+Enforcement - Southwest Calling
+Northwest Operations
+Parks and Recreation - Southwest Maintenance 1
+Enforcement - Northwest Calling
+Parks and Recreation - Southwest Maintenance 2
+Parks and Recreation - Northeast Maintenance 2
+Parks and Recreation - Southwest Enforcement
+Parks and Recreation - Southwest Maintenance 3
+Parks and Recreation - Northwest Enforcement 1
+Parks and Recreation - Northeast Enforcement 1
+Parks and Recreation - Northwest Maintenance 2
+Parks and Recreation - Northeast Enforcement 2
+Mineral Resource Management - South
+Wildlife Enforcement - District 5 (SW)
+Tactical
+Parks and Recreation - Southwest Enforcement 1
+Parks and Recreation - Southeast Enforcement 3
+Wildlife Enforcement - District 4 (SE)
+Southeast Operations
+Enforcement - Southeast Calling
+Emergency
+Parks and Recreation - Southeast Maintenance 4
+Central Operations
+Parks and Recreation - East Central Maintenance
+Forestry Maintenance - Fernwood Region
+Parks and Recreation - Southeast Enforcement 1
+Parks and Recreation - Southeast Maintenance 2
+Wildlife Enforcement - District 1 (Central)
+Parks and Recreation - Southeast Maintenance 3
+Parks and Recreation - Southeast Enforcement 2
+Oil and Gas
+Enforcement - Central Calling
+Parks and Recreation - Central Enforcement 1
+Parks and Recreation - Central Maintenance 2
+Parks and Recreation - Central Maintenance 1
+Administration
+Division of Engineering - Dams
+Announcement Talk Group - Central Ohio
+Division of Engineering
+Announcement Talk Group - NE Ohio
+Announcement Talk Group - NW Ohio
+Parks and Recreation - Southwest Enforcement 3
+Announcement Talk Group - SE Ohio
+Announcement Talk Group - SW Ohio
+ODRC Statewide 1
+Ohio DRC OSU Medical Center operations
+ODRC Statewide 2
+ODRC Statewide 3
+North Central Correctional Complex - Perimeter Ops
+Noble Correctional Institution - Perimeter Ops
+ODRC Statewide 4
+Ohio State Penitentiary - Perimeter Ops
+Ohio Reformatory for Women - Perimeter Ops
+ODRC Statewide 5
+Richland Correctional Institution - Perimeter Ops
+Trumbull Correctional Institution - Perimeter Ops
+ODRC Statewide 6
+Corrections Reception Center - Perimeter Ops
+ODRC Statewide 7
+ODRC Special Operations 3
+ODRC Statewide 8
+North Central Correctional Complex - Maintenance Ops
+ODRC Statewide 9
+Pickaway Correctional Institution - Perimeter Ops
+Southeastern Correctional Institution - Perimeter Ops
+Southern Ohio Correctional Facility - Perimeter Ops
+ODRC Statewide 10
+Corrections Reception Center - General Ops
+Corrections Reception Center - Special Ops 1
+ODRC Statewide 11
+Corrections Reception Center - Special Ops 2
+ODRC Statewide 12
+ODRC Statewide 13
+Ohio State Penitentiary - General Ops
+Corrections Reception Center - Housing Ops
+ODRC Statewide 14
+Ohio State Penitentiary - Housing Ops
+Corrections Reception Center - Maintenance Ops
+ODRC Statewide 15
+Ohio State Penitentiary - Supervisors
+Correctional Reception Center - Supervisors
+ODRC Statewide 16
+Ohio State Penitentiary - Special Ops 1
+Ohio State Penitentiary - Special Ops 2
+Ohio State Penitentiary - Maintenance Ops
+North Central Correctional Complex - General Ops
+North Central Correctional Complex - Housing Ops
+North Central Correctional Complex - Special Ops 1
+Northeast Reintegration Center - General Ops
+North Central Correctional Complex - Special Ops 2
+Northeast Reintegration Center - Housing Ops
+Pickaway Correctional Institution - General Ops
+Northeast Reintegration Center - Perimeter Ops
+North Central Correctional Complex - Supervisors
+Northeast Reintegration Center - Special Ops 1
+Pickaway Correctional Institution - Housing Ops
+Richland Correctional Institution - General Ops
+Northeast Reintegration Center - Maintenance Ops
+Richland Correctional Institution - Housing Ops
+Northeast Reintegration Center - Supervisors
+Pickaway Correctional Institution - Special Ops 1
+Southeastern Correctional Institution - General Ops
+Southern Ohio Correctional Facility - General Ops
+Northeast Reintegration Center - Special Ops 2
+Pickaway Correctional Institution - Special Ops 2
+Pickaway Correctional Institution - Maintenance Ops
+Southeastern Correctional Institution - Housing Ops
+Pickaway Correctional Institution - Supervisors
+Richland Correctional Institution - Special Ops 1
+Southeastern Correctional Institution - Maintenance Ops
+Southern Ohio Correctional Facility - Housing Ops
+Richland Correctional Institution - Special Ops 2
+Southeastern Correctional Institution - Special Ops 1
+Southern Ohio Correctional Facility - Announcements
+Trumbull Correctional Institution - General Ops
+Richland Correctional Institution - Maintenance Ops
+Southeastern Correctional Institution - Special Ops 2
+Southern Ohio Correctional Facility - Special Ops 1
+Richland Correctional Institution - Supervisors
+Trumbull Correctional Institution - Housing Ops
+Southern Ohio Correctional Facility - Special Ops 2
+Southeastern Correctional Institution - Supervisors
+Southern Ohio Correctional Facility - Maintenance Ops
+Northeast Reintegration Center - Announcements
+Southern Ohio Correctional Facility - Supervisors
+Lake Erie Correctional Institution - General Ops
+Trumbull Correctional Institution - Special Ops 1
+Lake Erie Correctional Institution - Housing Ops
+Trumbull Correctional Institution - Special Ops 2
+Lake Erie Correctional Institution - Perimeter Ops
+Trumbull Correctional Institution - Maintenance Ops
+Lake Erie Correctional Institution - Special Ops 1
+Trumbull Correctional Institution - Supervisors
+Lake Erie Correctional Institution - Special Ops 2
+ODRC Special Operations 1
+Lake Erie Correctional Institution - Maintenance Ops
+Lake Erie Correctional Institution - Supervisors
+ODRC Special Operations 2
+Lake Erie Correctional Institution - Announcements
+North Central Correctional Complex - Announcements
+Noble Correctional Institution - Housing Ops
+Noble Correctional Institution - General Ops
+Noble Correctional Institution - Special Ops 1
+Noble Correctional Institution - Special Ops 2
+Ohio Reformatory for Women - General Ops
+Richland Correctional Institution - Announcements
+Noble Correctional Institution - Maintenance Ops
+Ohio Reformatory for Women - Housing Ops
+Southeastern Correctional Institution - Announcements
+Noble Correctional Institution - Supervisors
+Ohio Reformatory for Women - Announcements
+Noble Correctional Institution - Announcements
+Ohio Reformatory for Women - Special Ops 1
+Ohio State Penitentiary - Announcements
+Ohio Reformatory for Women - Special Ops 2
+Ohio Reformatory for Women - Maintenance Ops
+Trumbull Correctional Institution - Announcements
+Ohio Reformatory for Women - Supervisors
+Pickaway Correctional Institution - Announcements
+Corrections Reception Center - Announcements
+Adult Parole Authority - Crawford Unit 1
+Adult Parole Authority - Hocking Unit 2
+Adult Parole Authority Regional 1
+Adult Parole Authority - Seneca Unit 1
+Adult Parole Authority Regional 2
+Adult Parole Authority Regional 3
+Adult Parole Authority - Richland Unit 4
+Adult Parole Authority Task Force 1
+Adult Parole Authority - Richland Unit 5
+Adult Parole Authority Task Force 2
+Adult Parole Authority - Washington Unit 1
+Adult Parole Authority - Trumbull Unit 1
+Corrections Training Academy Operations
+Division of Drinking and Ground Water
+Primary Calling
+Maintenance
+Oversized Load Escort 1
+Division of Drinking and Ground Water (Northwest)
+District 4 - Freeway Service Patrols
+District 1 - Main
+Oversized Load Escort 2
+District 6 - Freeway Service Patrols
+District 2 - Main
+District 2  - Freeway Service Patrols
+Oversized Load Escort 3
+District 7 - Freeway Service Patrols
+District 3 - Main
+District 8 - Freeway Service Patrols
+District 4 - Main
+District 5 - Main
+High Intensity Drug Trafficking Area Tac 1
+District 6 - Main
+District 9 - Portable Scales
+District 7 - Main
+High Intensity Drug Trafficking Area Tac 2
+District 8 - Main
+District 9 - Main
+District 10 - Main
+District 11 - Main
+District 12 - Freeway Service Patrols
+District 12 - Main
+Public Utilities Commission of Ohio HQ
+Cuyahoga Hills Juvenile Correctional Facility
+Ohio Department of Taxation Headquarters
+Public Utilities Commission of Ohio - Commercial Vehicle Enforcement
+Cuyahoga Hills Juvenile Correctional Facility - Maintenance
+Public Utilities Commission of Ohio - Motor Carriers Enforcement - Southwest
+Hazardous Materials Common 1
+Hazardous Materials Common 2
+High Intensity Drug Trafficking Area Tac 3
+High Intensity Drug Trafficking Area Tac 4
+Indian River Juvenile Correctional Facility - Superintentent
+Indian River Juvenile Correctional Facility - Admin
+Indian River Juvenile Correctional Facility
+Indian River Juvenile Correctional Facility - Maintenance
+Indian River Juvenile Correctional Facility - Medical
+Ohio Department of Agriculture
+Ohio Department of Insurance - Enforcement
+Security
+Twin Valley Behavioral Healthcare Hospital - Security
+Twin Valley Behavioral Healthcare Hospital 2
+Announcements
+Central Office Maintenance 1
+Safety
+Central Office Maintenance 2
+Central Office Maintenance 3
+Central Office Maintenance 4
+District 1 - Operations
+Central Office
+District 2 - Operations
+District 3 - Operations
+District 4 - Operations
+District 5 - Operations
+District 6 - Operations
+District 8 - Operations
+District 9 - Operations
+District 10 - Operations
+Heartland Behavorial Health - Dispatch
+EOC Operations
+District 1 - Maintenance 1
+District 2 - Maintenance 1
+District 11 - Operations
+District 3 - Maintenance 1
+District 4 - Maintenance 1
+District 5 - Maintenance 1
+District 6 - Maintenance 1
+District 12 - Operations
+District 7 - Maintenance 1
+District 7 - Operations
+District 8 - Maintenance 1
+District 9 - Maintenance 1
+District 10 - Maintenance 1
+District 11 - Maintenance 1
+District 12 - Maintenance 1
+All Radio Call
+District 1 - Maintenance 2
+District 2 - Maintenance 2
+District 3 - Maintenance 2
+District 4 - Maintenance 2
+District 5 - Maintenance 2
+District 6 - Maintenance 2
+District 7 - Maintenance 2
+District 8 - Maintenance 2
+District 9 - Maintenance 2
+District 10 - Maintenance 2
+District 11 - Maintenance 2
+District 12 - Maintenance 2
+District 4 - Maintenance 3
+District 4 - Maintenance 4
+District 8 - Maintenance 3
+District 12 - Maintenance 3
+District 12 - Maintenance 4
+District 6 - Bridge Operations
+Heartland Behavorial Health - Tactical 1
+Tac 2
+Heartland Behavorial Health - Tactical 2
+Code Enforcement - Northeast
+Academy 1
+Code Enforcement SW District
+Academy 2
+Code Enforcement SE District
+Academy 3
+Academy 4
+BWC Security
+Code Enforcement
+Code Enforcement - Northwest
+Dispatch
+911 Program Office
+BWC Region 1 Claimant Fraud
+BWC Region 2 Claimant Fraud
+BWC Region 3 Claimant Fraud
+SID Health Care Provider Fraud Team 1
+SID Employer Fraud Team
+BWC Administration Staff
+BWC Tactical 1
+BWC Tactical 2
+SID Health Care Provider Fraud Team 2
+South Central Power - Metering
+Consolidated Rural Electric
+Darke Rural Electric Cooperative
+South Central Power - Metering 2
+Washington Electric Cooperative
+Union Rural Electric Cooperative Ch. 1
+Union Rural Electric Cooperative Ch. 2
+Adams Rural Electric 2
+All Call
+Central Substation
+East Substation
+South Substation
+Emergency Backup
+Transmission
+Mayfield DCC
+Miles DCC
+Brooklyn DCC
+Emergency operations
+Emergency operations - backup
+Brooklyn Service Center
+Concord Service Center
+Mayfield Service Center
+Miles Rd Service Center
+Substation East
+Substation West
+Trouble operations
+Underground
+Electric Inspection
+Street Light Maintenance
+Meter Service
+Transmission Service
+Transmission DCC
+Substation DCC
+Storm operations
+Spare 1
+Spare 2
+Spare 3
+Spare 4
+Spare 5
+Concord DCC
+Air Evac
+Rickenbacker Operations
+Command
+Ohio National Guard - Range Control
+Ohio National Guard
+Marshals Service - Tac 6
+Marshals Service - Tac 1
+Marshals Service - Tac 2
+Urban Search and Rescue Region 3
+Marshals Service - All Call
+Marshals Service - Tac 9
+Marshals Service - Tac 3
+ONG Homeland Response Force (CBRN-TF)
+Marshals Service - Tac 4
+Marshals Service
+Marshals Service - Tac 5
+Wright Pat Medical Center
+Event Common 15
+Statewide Interop
+Interoperability 1
+Local Event Communications 1
+Interoperability 2
+Local Event Communications 2
+Interoperability 3
+Local Event Communications 3
+Interoperability 4
+Statewide
+Local Event Communications 4
+Interoperability 5
+Local Event Communications 5
+Interoperability 6
+Local Event Communications 6
+Interoperability 7
+Local Event Communications 7
+Interoperability 8
+Local Event Communications 9
+Interoperability 9
+Local Event Communications 10
+Interoperability 10
+Local Event Communications 11
+Interoperability 11
+Local Event Communications 8
+Interoperability 12
+Local Event Communications 12
+Interoperability 13
+Local Event Communications 13
+Interoperability 14
+Local Event Communications 14
+MARCS System and User Support
+Local Event Communications 15
+Local Event Communications 16
+Command post common 1
+Event Common 1
+Event Common 12
+Event Common 22
+Event Common 23
+Event Common 24
+Event Common 25
+Event Common 26
+Event Common 27
+Event Common 28
+Event Common 2
+Mutual Aid Calling - Central/West Central
+Event Common 3
+Event Common 4
+County Interop - Northwest
+Event Common 5
+Event Common 6
+County Interop - Northeast
+Event Common 7
+Event Common 8
+County Interop - Southeast
+Event Common 9
+Event Common 10
+Mutual Aid Calling - North
+County Interop - Southwest
+Event Common 11
+Pursuit  - Region 1
+County Interop - Central
+Event Common 13
+Event Common 14
+Mutual Aid Calling - South/Southwest
+Event Common 16
+Mutual Aid Calling - East/Southeast
+Office of Information Technology (OIT) - Motorola Techs
+Event Common 17
+Mutual Aid Ops - Central/West
+Event Common 18
+Pursuit - Region 2
+Event Common 19
+Mutual Aid Ops - North
+Command post common 2
+Event Common 20
+Event Common 21
+Mutual Aid Ops - South/Southwest
+Mutual Aid Ops - East/Southeast
+Pursuit - Region 3
+Pursuit - Region 4
+Headquarters
+Pursuit - Region 5
+Pursuit - Region 6
+Pursuit - Region 7
+Pursuit - Region 8
+MARCS Demo Talkgroup
+Westcom Fireground
+Operations 5
+Interoperability 15
+Interoperability 16
+Ohio Fire Chiefs Association 1
+Ohio Fire Chiefs Association 2
+Countywide Event/General Use Common 1
+Ohio State Firefighters 1
+Countywide Event/General Use Common 2
+Promedica calling
+Northern Border Interop TAC3
+Countywide Event/General Use Common 3
+Countywide Event/General Use Common 4
+Countywide Event/General Use Common 5
+Countywide Event/General Use Common 6
+Countywide Event/General Use Common 7
+Countywide Event/General Use Common 8
+Countywide Event/General Use Common 9
+Countywide Event/General Use Common 10
+Countywide Event/General Use Common 11
+Northern Border Interop TAC4
+Countywide Event/General Use Common 12
+Countywide Event/General Use Common 13
+University MedEvac 1
+Countywide Event/General Use Common 14
+Interoperability
+Countywide Event/General Use Common 15
+Countywide Event/General Use Common 16
+Sheriff All Call
+County Interop - West Central
+Sheriff - Tactical
+Sheriff Tac
+Sheriff Events
+Sheriff Dispatch - Old
+County Sheriff Tactical 2
+Sheriff - Tactical 3
+Sheriff - Tactical 1
+County law dispatch primary
+SO 62 Dispatch
+COIRS LE Interop
+Davis-Besse Nuclear Power Plant
+Fire/EMS Backup talkgroup on MARCS
+Event Common 30
+Event Common 29
+Event Common 31
+Freeway Service Patrol Tactical
+Event Common 32
+Norwood Police MAYDAY
+UC Health Public Safety
+UC Health Drake Hospital
+Children's Hospital 1
+Children's Hospital 2
+CFD Fire Prevention
+Lunken Airport (KLUK) Control Tower
+Radio Service 1
+Radio Service 2
+Radio Service 3
+CPD-CFD Command Common 2
+Xavier University Police
+Norwood Police
+Norwood Fire
+Norwood Police - Fire Utility
+Norwood Fire Ground 2
+Norwood Police 2
+Ohio - Kentucky Interstate Mutual Aid 1
+Ohio - Kentucky Interstate Mutual Aid 2
+Ohio - Kentucky Interstate Mutual Aid 3
+Ohio - Kentucky Interstate Mutual Aid 4
+Ohio - Kentucky Interstate Mutual Aid 5
+Ohio - Kentucky Interstate Mutual Aid 6
+Ohio - Kentucky Interstate Mutual Aid 7
+Ohio - Kentucky Interstate Mutual Aid 8
+Ohio - Kentucky Interstate Mutual Aid 9
+Ohio - Kentucky Interstate Mutual Aid 10
+Coast Guard
+CVG Airport Police
+Norwood Police Tactical
+All County Broadcast - Norwood
+Northern Kentucky Inter-PSAP Calling
+Waterworks Supply
+Waterworks
+Neighborhood Operations (SAN)
+Traffic Operations (HWY)
+Public Works Car to Car
+Public Works Executive
+Facilities Maintenance
+Xavier University Police Talk-around Group
+Public Works Internal Operations
+Southern Ohio Regional Transit Authority - Operations West
+Salvation Army
+Lunken Airport Maintenance 1
+Lunken Airport Maintenance 2
+Fire Station Alerting
+University Heights Fire Alert
+Shaker Heights Fire Alert
+Minor Incident Ops
+Automated Dispatch
+Chiefs
+Unit to Dispatcher
+Traffic Engineering dispatch
+HAZMAT Operations
+Special events 1
+Special events 2
+Auxiliary
+Central Ohio Strike Team
+Fire prevention
+Arson investigators
+Training Academy
+Recruitment Office
+Traffic enforcement 2
+Emergency fireground
+Emergency incident command
+Emergency fireground staging
+Emergency fireground tactical
+Car-to-car
+EMS 9 Branch
+EMS Medical Ops 1
+EMS Medical Ops 2
+EMS Announcement
+EMS Incident Staging
+Extrication
+EMS to medical helicopter
+EMS to Poison Control
+Rescue Training ops
+Traffic enforcement Tac 2
+Traffic enforcement Tac 3
+Vice main
+Battalion 1 Announcement
+Battalion 1 Fireground
+Battalion 1 Incident Command
+Battalion 1 Tac 1
+Battalion 1 Tac 2
+Battalion 1 Tac 3
+Battalion 1 Tac 4
+Battalion 1 Tac 5
+Battalion 1 Tac 6
+Battalion 1 Tac 7
+Battalion 1 Rapid Intervention Team
+Battalion 1 Incident Staging
+Battalion 2 Announcement
+Battalion 2 Fireground
+Battalion 2 Incident Command
+Battalion 2 Tac 1
+Battalion 2 Tac 2
+Battalion 2 Tac 3
+Battalion 2 Tac 4
+Battalion 2 Tac 5
+Battalion 2 Tac 6
+Battalion 2 Tac 7
+Battalion 2 Rapid Intervention Team
+Infrastructure Mgt (Street Maint) - 25th Ave yard
+Battalion 2 Incident Staging
+Battalion 3 Announcement
+Battalion 3 Fireground
+Battalion 3 Incident Command
+Battalion 3 Tac 1
+Battalion 3 Tac 2
+Battalion 3 Tac 3
+Battalion 3 Tac 4
+Battalion 3 Tac 5
+Battalion 3 Tac 6
+Battalion 3 Tac 7
+Battalion 3 Rapid Intervention Team
+Infrastructure Mgt (Street Maint) - Central yard
+Battalion 3 Incident Staging
+Battalion 4 Announcement
+Battalion 4 Fireground
+Battalion 4 Incident Command
+Battalion 4 Tac 1
+Battalion 4 Tac 2
+Battalion 4 Tac 3
+Battalion 4 Tac 4
+Battalion 4 Tac 5
+Battalion 4 Tac 6
+Battalion 4 Tac 7
+Battalion 4 Rapid Intervention Team
+Battalion 4 Incident Staging
+Battalion 5 Announcement
+Battalion 5 Fireground
+Battalion 5 Incident Command
+Battalion 5 Tac 1
+Battalion 5 Tac 2
+Battalion 5 Tac 3
+Battalion 5 Tac 4
+Battalion 5 Tac 5
+Battalion 5 Tac 6
+Battalion 5 Tac 7
+Battalion 5 Rapid Intervention Team
+Infrastructure Mgt (Street Maint) - North yard
+Battalion 5 Incident Staging
+Battalion 6 Announcement
+Battalion 6 Fireground
+Battalion 6 Incident Command
+Battalion 6 Tac 1
+Battalion 6 Tac 2
+Battalion 6 Tac 3
+Battalion 6 Tac 4
+Battalion 6 Tac 5
+Battalion 6 Tac 6
+Battalion 6 Tac 7
+Battalion 6 Rapid Intervention Team
+Infrastructure Mgt (Street Maint) - Roberts Road yard
+Battalion 6 Incident Staging
+Battalion 7 Announcement
+Battalion 7 Fireground
+Battalion 7 Incident Command
+Battalion 7 Tac 1
+Battalion 7 Tac 2
+Battalion 7 Tac 3
+Battalion 7 Tac 4
+Battalion 7 Tac 5
+Battalion 7 Tac 6
+Battalion 7 Tac 7
+Battalion 7 Rapid Intervention Team
+Infrastructure Mgt (Street Maint) - tac
+Battalion 7 Incident Staging
+Station 1/9 PA
+Station 2 PA
+Station 4 PA
+Station 5 PA
+Station 6 PA
+Station 7 PA
+Station 8 PA
+Station 10 PA
+Station 11 PA
+Station 12 PA
+Station 13 PA
+Station 14 PA
+Station 15 PA
+Station 16 PA
+Station 17 PA
+Station 18 PA
+Station 19 PA
+Station 20 PA
+Station 21 PA
+Station 22 PA
+Station 23 PA
+Station 24 PA
+Station 25 PA
+Station 26 PA
+Station 27 PA
+Station 28 PA
+Station 29 PA
+Station 30 PA
+Station 31 PA
+Station 32 PA
+Station 33 PA
+Station 34 PA
+Grandview Hts Station 51 PA
+Rickenbacker Fire Station 221 PA
+Bloom Twp Fire Station 551 PA
+Fire Alarm Office
+Community Crime Patrol
+Countywide interoperability 1
+Countywide interoperability 10
+Countywide interoperability 11
+Countywide interoperability 12
+Countywide interoperability 13
+Countywide interoperability 14
+Countywide interoperability 15
+Countywide interoperability 2
+Countywide interoperability 3
+Countywide interoperability 4
+Countywide interoperability 5
+Countywide interoperability 6
+Countywide interoperability 7
+Countywide interoperability 8
+Countywide interoperability 9
+Countywide interoperability Announcement
+Police-Fire Common
+Auto Squad
+Service Bailiff
+Dialogue Team
+Criminal Investigations Unit? (CIU)
+Comm Channel A
+Comm Channel B
+Special Events 1
+Special Events 2
+Special Events 3
+Court Liaison
+Detective
+Detectives Tac 1
+Refuse Collection primary
+Battalion 2 EMS Ops
+Division of Power - Electric dispatch
+Canine
+Computer data
+Ohio LEERN patch
+Rec & Parks - Urban Forestry
+Zone 1 (Northeast) Dispatch
+Zone 2 (Southeast) Dispatch
+Zone 3 (Southwest) Dispatch
+Zone 4 (Northwest) Dispatch
+Zone 5 (South Central) Dispatch
+Zone 6 (Central) Dispatch
+Battalion 3 EMS Ops
+Battalion 4 EMS Ops
+Parking Enforcement
+Patrol tactical 1A
+Patrol tactical 1B
+Patrol tactical 1C
+Patrol tactical 1D
+Patrol tactical 1E
+Patrol tactical 2A
+Patrol tactical 2B
+Patrol tactical 2C
+Patrol tactical 2D
+Patrol tactical 2E
+Patrol tactical 3A
+Patrol tactical 3B
+Patrol tactical 3C
+Patrol tactical 3D
+Patrol tactical 3E
+Patrol tactical 4A
+Patrol tactical 4B
+Patrol tactical 4C
+Patrol tactical 4D
+Patrol tactical 4E
+Patrol tactical 5A
+Patrol tactical 5B
+Patrol tactical 5C
+Patrol tactical 5D
+Patrol tactical 5E
+Adult records
+Division of Refuse Collection - Alum Creek Facility
+Special Services (helicopters)
+Division of Refuse Collection - Morse Rd. Facility
+Division of Refuse Collection - Georgesville Rd Facility
+Mifflin Township 130 PA
+Supervisor 1
+Supervisor 2
+Supervisor 3
+Supervisor 4
+Supervisor 5
+Traffic enforcement 1
+EMS transport
+EMS Treatment operations
+EMS triage
+Traffic enforcement Tac 1
+Vice Tactical 1
+Vice Tactical 2
+MECC EMS operations
+MECC Fireground 2
+Plain Township PA
+Mifflin Township 131 PA
+Mifflin Township 132 PA
+Mifflin Township 133 PA
+Mifflin Township 134 PA
+Whitehall Fire PA
+DSCC Fire PA
+Truro Township 161 PA
+Truro Township 162 PA
+Violet Township 591 PA
+Violet Township 592 PA
+Violet Township 593 PA
+Basil Fire Station 611 PA
+MECC Announcements
+MECC Fire/EMS Alerting
+MECC Fireground 1
+Sewer Maintenance Operations Center
+MECC Fire/EMS calling to dispatcher
+MECC Fireground 3
+Rec & Parks - Operations
+Rec & Parks - Maintenance
+Division of Power - Electric 2
+MECC Incident Command 1
+MECC Incident Command 4
+MECC Incident Command 3
+MECC Fireground 4
+MECC Incident Command 2
+Otterbein Police
+Development Dept - Code Enforcement
+Development Dept
+Municipal Court - Building Maintenance (Housekeeping)
+Municipal Court bailiffs
+Division of Power - Maintenance
+Division of Power - Electric Distribution
+Division of Water - Distribution
+Division of Water - Building Maintenance
+Division of Water - Watershed Management
+Division of Water - Support
+Department of Public Utilities - Common 1
+City Facility Security
+PSAP-to-PSAP 1
+SWAT Tactical 3
+Battalion 1 EMS Ops
+Battalion 5 EMS Ops
+Battalion 6 EMS Ops
+Battalion 7 EMS Ops
+Infrastructure Mgt Admin
+Journeyman Apprenticeship Training Council
+Chalmers P Wylie VA Hospital - Security
+Support
+Battalion 8 Announcement
+Battalion 8 Incident Command
+Battalion 8 Tac 1
+Battalion 8 Tac 2
+Battalion 8 Tac 3
+Battalion 8 Tac 4
+Battalion 8 Tac 5
+Battalion 8 Tac 6
+Battalion 8 Tac 7
+Battalion 8 Rapid Intervention Team
+Battalion 8 EMS Ops
+Battalion 8 Fireground
+Battalion 8 Incident Staging
+Training Bureau Fireground
+Training Bureau Incident Command
+Training Bureau Tac 1
+Training Bureau Tac 2
+Training Bureau Tac 3
+Training Bureau Tac 4
+Training Bureau Tac 5
+Training Bureau Tac 6
+Training Bureau Tac 7
+Training Bureau Tac 8
+Training Bureau EMS Ops
+Training Bureau Staging
+Training Bureau Announcement
+Patrol tactical 6A
+Patrol tactical 6B
+Patrol tactical 6C
+Patrol tactical 6D
+Patrol tactical 6E
+Bloom Twp Fire Station 552 PA
+EMS Supervisor
+MECC Staging
+Zone 1 Plain Cars
+Zone 2 Plain Cars
+Zone 3 Plain Cars
+Zone 4 Plain Cars
+Zone 5 Plain Cars
+Zone 6 Plain Cars
+Station 3 PA
+Medics to Maryhaven
+Stroke 1 PA
+Station 35 PA
+Mobile Crisis Response Team
+Harlem FD 451 PA
+Northwest PA
+SWAT Tactical 2
+SWAT Tactical 1
+SWAT Main
+Law Dispatch North
+Law Dispatch Central
+Law Dispatch South
+Law Records North
+Law Records South
+Law TAC 1
+Law TAC 2
+Law TAC 3
+Law TAC 4
+Law TAC 5
+County Fire Dispatch 1
+County Fire Dispatch 2 (Paging Only)
+Regional Dispatch Center Helpdesk
+Sheriff Car to Car
+Sheriff Range TF B
+Sheriff SWAT Units
+SWAT Command
+Court Security 1
+Court Security 2
+Dispatch to Dispatch
+Countywide 5
+Law Enforcement 1
+Law Enforcement 2
+Law Enforcement 3
+Law Enforcement 4
+Law Enforcement 5
+County wide SWAT
+County wide SWAT OPS
+Animal Control 1
+Animal Control 2
+Box 21 Rescue
+Sanitary Main
+Sanitary 2
+Sanitary 3
+Sanitary 4
+Sanitary 5
+Sanitary - Solid Waste
+Sanitary - Solid Waste 2
+Sanitary - Solid Waste 3
+Engineer 3
+Engineer 4
+County Prosecutor 1
+County Prosecutor 2
+County Secure Transitional Offender Program (S.T.O.P.)
+County MR/DD Transportation 1
+County MR/DD Transportation 2
+Juvenile Detention Center - Primary
+Juvenile Detention Center - Receiving
+Juvenile Court 4
+Juvenile Court 5
+Centerville Police Dispatch
+Centerville Police Tac 1
+Clay Township Admin
+Clay Township Road and Bridge Department
+County Park Ranger
+Park Ranger Car to Car
+5 Rivers Investigation
+Five Rivers Metroparks
+Five Rivers Metroparks Maintenance
+Five Rivers Metroparks Special Event
+Eastwood Metroparks
+German Township Police local
+Grandview Hospital Police
+Grandview Hospital Police Tac 1
+Grandview Hospital Police Tac 2
+Kettering Medical Center Police
+Huber Heights Fire Dispatch
+Huber Heights Fire Training
+Huber Heights Fire
+Huber Heights Police Dispatch
+Huber Heights Police Records
+Huber Heights Police Tac 1
+Huber Heights Police Tac 2
+Huber Heights Police Tac 3
+Huber Heights Police
+Huber Heights Street Flaggers
+Huber Heights Street Department
+Huber Heights Streets 2
+Kettering Fire Dispatch
+Kettering Fire Special Events
+Kettering Fire Prevention
+Kettering Fire Training
+Kettering Police Special Events
+Kettering Police Dispatch
+Miami Township Police Dispatch
+Kettering Police Tactical
+Kettering Police - Courthouse Security
+Kettering Police SWAT
+Kettering Police SWAT 2
+Miami Township Police Local
+Miami Township Streets 1
+Miami Township Streets 2
+Miami Twp Fire Administration
+Miami Valley Hospital Police Dispatch
+Miami Valley Hospital Police Tac 1
+Miami Valley Hospital Police Tac 2
+Miami Valley Hospital North Police Dispatch
+Miami Valley Hospital South Police Dispatch
+Tactical Crime Suppression Unit
+Moraine Fire Dispatch
+Moraine Police Dispatch
+Moraine Police Ops
+Moraine Police Tac 1
+Moraine Streets
+Riverside Fire - Training
+Riverside Police records
+Riverside Police Encrypted
+Riverside Police Local 1
+Riverside Streets 1
+Riverside Streets 2
+Riverside Fire Administration
+Regional Transit Authority
+Regional Transit Authority Supervisor
+Police TAC 1
+Police TAC 2
+Police 4
+Trotwood Fire Training
+Trotwood Police Local
+Trotwood Street 2
+Trotwood Water Department
+Trotwood Street Department
+Union Police Local
+Union Fire Tactical
+Veterans Hospital Police
+Veterans Hospital Police Tac 1
+Washington Township Fire Dispatch
+Washington Township Fire Chatter
+Centerville- Washington Twp Park District
+Regional Transit Authority Buses to Dispatch
+Fire Operations 44 (Huber Heights)
+Fire Operations 45 (Huber Heights)
+Fire Operations 48 (Overflow)
+Fire Operations 49
+Fire Operations 62 (Kettering)
+Fire Operations 63 (Kettering)
+Fire Operations 64
+Fire Operations 65
+Fire Operations 66
+Fire Operations 67
+Fire Operations 68
+Fire Operations 69
+Medic 6A (Kettering)
+Medic 6B
+Medic 6C (Washington Twp EMS)
+Fire Operations 76 (Moraine)
+Fire Operations 77 (Moraine)
+Medic 7B (Moraine EMS)
+Medic 7C (West C����arrollton EMS)
+Fire Operations 80
+Fire Operations 82
+Fire Operations 83
+Fire Operations 84
+Fire Operations 85 (Washington Township)
+Fire Operations 86
+Fire Operations 87
+Fire Operations 88
+Fire Operations 89
+Fire Operations 8A
+Fire Operations 8B
+Fire Operations 8C
+Fire Operations 8D
+Fire Operations 90
+Fire Operations 92
+Fire Operations 93
+Fire Operations 94
+Fire Operations 95
+Fire Operations 96
+Fire Operations 97
+Fire Operations 98
+Fire Operations 99
+Fire Operations 9A
+Fire Operations 9B
+Fire Operations 9C
+Fire Operations 9D
+Children's Hospital
+Miami Valley Hospital
+Miami Valley Hospital South
+Kettering Medical Center
+Kettering Health Washington Township
+Veterans Hospital
+Mass Casualty Incident (MCI) EMS Region 3
+Kettering Medical Center - Security
+Huber Heights Fire Dispatch 2 [May be unused at this time]
+Kettering Health Huber ER
+County Emergency Management Agency
+EMA Regional Calling, Northwest Ohio
+EMA Regional Calling, Central Ohio
+EMA Regional Calling, Northeast Ohio
+EMA Regional Calling, Southeast Ohio
+Local Agencies to NWS Pittsburgh
+EMA Regional Calling, Southwest Ohio
+Local Agencies to NWS Charleston
+Local Agencies to NWS Northern Indiana
+Glendale area fire operations
+Ohio EMA
+Ohio EMA Radiological Branch
+ODH common
+ODH Operations
+ODH Planning
+Northwest Region Calling
+ODH Calling
+Northeast Region Calling
+Southwest Region Calling
+Southeast Region Calling
+Central Region Calling
+ODH to Hospitals Common - Central
+Hospital Council of Northwest Ohio
+The Center for Health Affairs
+Northeast Ohio Neighborhood Health Services
+ODH to Hospitals Common - Southeast
+The Health Collaborative
+Local Health Departments Common
+Joint Township District Memorial Hospital (St. Mary's)
+OhioHealth - Grady Memorial Hospital
+Children's Hospital ER
+Knox Community Hospital (Mt Vernon)
+Licking Memorial Hospital
+Mercer Health
+Miami Valley Hospital South (Centerville)
+Mount Carmel East ER
+Kettering Medical Center (Kettering)
+Mt Carmel West ER
+Kettering Health Huber
+West Central Region Calling
+Diley Ridge Medical Center
+ODH mutual aid-Shaker Heights health department
+ODH mutual aid-Hancock Public Health
+Samaritan Regional Health Systems
+Firelands Regional Medical Center
+UH Geauga Medical Center
+Hardin Memorial Hospital
+Hillcrest Hospital CCHS (Mayfield Heights)
+Pomerene Hospital
+Fisher-Titus Medical Center
+University Hospitals
+Promedica Flower Hospital
+Marymount Hospital CCHS (Garfield Heights)
+Lake Health - West Medical Center
+MercyHealth - Mercy Regional Medical Center
+Mercy Health - St. Charles Hospital
+MercyHealth - Mercy Allen Hospital
+McLaren St. Luke's Hospital
+Northside Regional Medical Center
+Northeast Central Region Calling
+UHHS Ahuja Medical Center
+MercyHealth - St Elizabeth Boardman Hospital
+ProMedica Bay Park Hospital
+UHHS Parma Community Hospital (Parma)
+Wyandot Memorial Hospital
+ODH Mutual Aid - County Health Dept
+ODH mutual aid-Norwood health department
+ODH mutual aid-Springdale City Health Department
+Mercy Health - West Hospital
+Mercy Hospital (Clermont)
+Mercy Health Anderson Hospital
+Miami Valley Hospital Careflight/MICU - Comm Center
+Greene Memorial Hospital
+Greene SOIN Medical Center
+Mercy Health - Western Hills Medical Center
+Miami Valley Hospital CareFlight - Air Ops
+MIami Valley Hospital CareFlight - Ground Ops
+Miami Valley Hospital Careflight - Administration
+Miami Valley Hospital CareFlight - Calling
+VA Hospitals - Statewide
+Wright Patterson AFB Medical Center
+Holzer Medical Center Security
+Genesis Hospital
+Selby Memorial Hospital
+OhioHealth O'Bleness Hospital
+East Ohio Regional Hospital
+ODH  Mutual Aid - County Health Dept
+Southeast Ohio Regional Medical Center
+Hocking Valley Community Hospital
+Southeast Central Region Calling
+Lake Health - Tripoint Medical Center
+CSX Police Interop 1
+CSX Police Interop 2
+Norfolk Southern Police Interop 1
+Norfolk Southern Police Interop 2
+OhioHealth EMS Community Paramedicine
+OhioHealth - Obetz Emergency Care
+Berger Hospital Maintenance
+Berger Hospital Security
+Countywide Events/Common 1
+Countywide Events/Common 2
+Countywide Events/Common 3
+Countywide Events/Common 4
+Countywide Events/Common 5
+Countywide Events/Common 6
+Countywide Events/Common 7
+Countywide Events/Common 8
+Countywide Events/Common 9
+Countywide Events/Common 10
+Countywide Events/Common 11
+Countywide Events/Common 12
+Countywide Events/Common 13
+Countywide Events/Common 14
+Countywide Events/Common 15
+Countywide Events/Common All Call
+Urgent/Emergency broadcasts - Central Ohio
+Sheriff West Dispatch
+Sheriff West Tactical 1
+Sheriff West Tactical 2
+Sheriff East Dispatch
+Sheriff East Tactical 1
+Sheriff East Tactical 2
+Sheriff LEADS
+Sheriff Records
+Sheriff special events 1
+Sheriff special events 2
+Sheriff special events 3
+Sheriff special events 4
+Sheriff Special Investigations Unit 1
+Sheriff Special Investigations Unit 2
+Sheriff Special Investigations Unit 3
+Sheriff warrant service
+County Jail (downtown) primary
+James A. Karnes Corrections Center secondary
+County Jail (south) primary
+County Jail (south) secondary
+Prisoner transport
+Sheriff Baliffs
+County Security Control - West
+County Security Control - East
+Courthouse Complex Security
+Blendon Twp PD local
+Mifflin Twp PD local
+Obetz PD local
+Valleyview PD local
+Sharon Twp PD local
+Southwest Fire Dispatch
+Southwest EMS 1
+Southwest Fireground 1
+Southwest Tac 1
+Southwest Fireground 2
+Southwest Tactical 2
+Southwest Fireground 3
+Southwest Tactical 3
+Southwest All Talk Group
+Southwest Training 1
+Southwest Training 2
+Southwest Training 3
+Southwest incident staging
+Pleasant Twp Fire Investigations
+Pleasant Twp Service Dept
+Police Tactical 1
+Police Tactical 2
+Detectives
+Service Department
+Southwest Police-Fire
+Southwest Mutual Aid 1
+Southwest Mutual Aid 2
+Southwest Event 1
+Southwest Event 2
+Southwest Event 3
+Southwest Event 4
+Box 15 canteen operations 1
+Box 15 canteen operations 2
+Severe Weather Net 1
+Severe Weather Net 2
+Police Tactical
+John Glenn Airport Fire Dispatch
+John Glenn Airport Fireground
+Rickenbacker Fire Dispatch
+Rickenbacker Fire Ops
+Rickenbacker Fireground
+Airport Authority Event 1
+Airport Authority Event 2
+Rickenbacker Intl Airport Tower (FAA to fire dept)
+Bolton Field Tower (FAA to fire dept)
+John Glenn Airport Airfield Maintenance
+John Glenn Airport Facilities Maintenance
+John Glenn Airport Custodians
+John Glenn Airport Facilities Management
+Rickenbacker Airfield Maintenance
+Rickenbacker Fixed Base Operator
+John Glenn Airport Blue Lot Shuttles
+John Glenn Airport Red Lot Shuttles
+John Glenn Airport Employee Lot Shuttles
+John Glenn Airport Rental Lot Shuttles
+Central Ohio Transit Authority - Buses 1
+Central Ohio Transit Authority - Buses 2
+Central Ohio Transit Authority - Buses 3
+Central Ohio Transit Authority - Buses 4
+Central Ohio Transit Authority - Paratransit 1
+Central Ohio Transit Authority - Paratransit 2
+Central Ohio Transit Authority - Paratransit 3
+Central Ohio Transit Authority - Maintenance 1
+Central Ohio Transit Authority - Maintenance 2
+Central Ohio Transit Authority - Maintenance 3
+Central Ohio Transit Authority - Maintenance 4
+Central Ohio Transit Authority - Administration 1
+Central Ohio Transit Authority - Administration 2
+Central Ohio Transit Authority - Administration 3
+Central Ohio Transit Authority - Administration 4
+Courthouse Complex maintenance
+Courthouse Complex engineering
+Courthouse Complex special maintenance
+Corrections Maintenance
+Juvenile Detention Center 1A
+Juvenile Detention Center 1B
+County Engineer Primary Operations
+County Engineer - West outpost
+County Engineer - East outpost
+Animal Control
+Animal Control Tac
+Capital Area Humane Society
+Community Based Correctional Facility
+Developmental Disabilities operations - east
+Developmental Disabilities operations - west
+County Engineer Traffic Management
+Capital University Police
+Adult Parole Board
+Southwest Fireground 4 (was Prairie Fire Tactical 1)
+Southwest Tactical 4 (was Prairie Fire Tactical 2)
+Metro Parks PD Dispatch
+Metro Parks PD Tactical
+Metro Parks PD Tactical 2
+Metro Parks PD Ops
+James A. Karnes Corrections Center primary
+James A. Karnes Corrections Center Stockroom
+PSAP
+Board of Education - Firestone
+Board of Education - Security
+Board of Education - Transportation
+Communications
+Fire Admin 5
+Fire Admin 6 (Fire Prevention)
+Fire Admin 8 (Fire Maintenance)
+Fire Command
+Events 1
+Events 2
+Events 3
+Events 4
+Events 5
+Events 6
+Events 7
+Events 8
+Events 9
+Events 10
+Events 11
+Events 12
+Police All Talkgroups
+Police Dispatch 1
+Police Dispatch 2
+Police Services
+Police Special Events 1
+Police Special Events 3
+Police/Fire Services
+Bailiff
+Building Maintenance
+Customer Service
+Highway
+Expressway
+Motor Equipment
+Parks
+Recreation
+Sanitation
+Leaf 1
+Leaf 2
+Sewer
+Snow and Ice
+Street Cleaning
+Traffic Engineering - Paint/Signs
+Traffic Engineering - Signals
+Water - Dispatch
+Water - Meter
+Water - Pollution
+Water - Supply
+SWSCOM Emergency Button
+Humane Society Dispatch
+Cuyahoga Valley National Park Police 1
+Cuyahoga Valley National Park Police 2
+Copley Fireground 13
+Copley Fireground 14
+Copley Fire 1
+Copley Fire Paging
+Copley Police 1
+Copley Police 2
+Copley Public Works 1
+Coventry Fire Alert 16
+SECC LEADS
+Coventry Fire Ops
+SECC Services
+Sheriff Court Escort
+Cuyahoga Valley Scenic Railroad Ch 1
+Cuyahoga Valley Scenic Railroad Ch 2
+MAC 2
+MAC 3
+MAC 4
+MAC 5
+MAC 6
+MAC 7
+MAC 8
+MAC 9
+MAC 10
+MAC 11
+MAC 12
+MAC 13
+MAC 14
+MAC 15
+MAC CALL
+MERC 2
+MERC 3
+MERC 4
+MERC 5
+MERC 6
+MERC 7
+MERC 8
+MERC 9
+MERC 10
+MERC 11
+MERC 12
+MERC 13
+MERC 14
+MERC 15
+MERC CALL
+METRO RTA Home
+MetroParks Operations 1
+MetroParks Operations 2
+MetroParks Ranger 1
+MetroParks Ranger 2
+Veterans Services
+METRO RTA Common
+METRO RTA Line
+METRO RTA Maintenance
+METRO RTA SCAT
+METRO RTA Supervisor
+Sheriff Bomb Main
+Sheriff Car-to-Car
+Sheriff Court Main
+Sheriff DB Main
+Sheriff Jail 1
+Sheriff Jail 2
+Sheriff Dispatch 1
+Sheriff Dispatch 3
+Sheriff Services
+Sheriff Special Events 5
+Sheriff Special Events 6
+Sheriff SWAT Main
+South Summit Fire COM 1
+South Summit Fire COM 2
+South Summit Fire COM 3
+South Summit Fire COM 4
+Community Care Ambulance - Summit
+Fireground 17
+Fireground 18
+Fire Chief Talkaround
+Fire All County Talkaround
+Fireground Emergency Plan
+County Law Dispatch
+County Law Inquiry 1
+Law Tactical 4
+Law Tactical 5
+All County Investigations 1
+Incident Command 1
+Incident Command 2
+Incident Command 3
+Incident Command 4
+Training 5
+Training 6
+Event 7
+Event 8
+Clermont Transportation Connection 1
+Clermont Transportation Connection 2
+Common Pleas Court 1
+Department of Jobs and Family Services
+Municipal Court 1
+Community Service
+ACTA 1
+Hospital Net 1
+Hospital Net 2
+Humane 1
+FBI
+Emergency Management 1
+Juvenile Court
+Mental Health and Recovery
+Army Corps of Engineers Harsha Lake (East Fork State Park)
+Life Flight
+Medivac
+Careflight
+Medflight
+Central Joint Fire/EMS District 1
+Central Joint Fire/EMS District 2
+Central Joint Fire/EMS District 3
+Northeast Communications (NECC) Law Dispatch
+NECC Law  2
+NECC Law 3
+NECC Law 4
+NECC All-County Broadcasts
+NECC Fire Dispatch
+NECC Fireground 1
+NECC Fireground 2
+NECC Fireground 3
+NECC Fireground 4
+NECC Fireground 5
+Miami Twp 1
+Miami Twp 2
+Miami Township 3
+Miami Township 4
+Stonelick Township 1
+Stonelick Township 2
+Stonelick Township 3
+Stonelick Township Maintenance 1
+Stonelick Township Maintenance 2
+Pierce Township 1
+Pierce Township 2
+Pierce Township 3
+Union Twp Fire Dispatch
+Union Twp Fire 2
+Union Twp Fire 3
+Union Twp Fire 4
+Union Twp Police Dispatch
+Union Twp Police 2
+Union Twp Police 3
+Union Twp Police 4
+Washington Township 1
+Washington Township 2
+Washington Township 3
+Willamsburg 1
+Willamsburg 2
+Willamsburg 3
+Jail 1
+Jail 2
+Court 1
+Court 2
+Narcotics Support
+Narcotics Unit
+Investigations Support
+Investigations Unit
+Dive Team
+Sheriff Talkaround 1
+Sheriff Talkaround 2
+Sheriff Staff
+Special Response Team 1
+Special Response Team 2
+Law Enforcement Tactical 1
+Law Enforcement Tactical 2
+Law Enforcement Tactical 3
+Law Enforcement Tactical 4
+Law Enforcement Tactical 5
+Law Enforcement Tactical 6
+UC Air Care 1
+UC Air Care 2
+UC Air Care 3
+NECC Public Works
+NECC Administration
+County Fleet 1
+County Engineer - 1A
+County Engineer - 1B
+County Engineer - 1C
+County Engineer - D ENG 1
+County Engineer - D RMAN
+County Engineer - D RMAS
+Police All-County Broadcasts
+Fire All-County Broadcasts
+Hospital Security - Operations 1
+Hospital Security - Tac 1
+Hospital Security - Tac 2
+Hospital Facilities Engineering
+Physical Plant - Electricians
+Transportation and Traffic Management - Park and Ride
+Disaster Ops
+OSU Hospital East 1  Security
+OSU Hospital East 2
+Public safety mutual aid 1
+Public safety mutual aid 2
+Public safety mutual aid 3
+Public safety mutual aid 4
+Traffic Management 1
+Traffic Management 2
+Traffic Management 3
+Traffic Management 4
+CABS (Campus Area Bus Service) Buses
+CABS (Campus Area Bus Service) Paratransit
+CABS (Campus Area Bus Service) Charter
+CABS (Campus Area Bus Service) Supervisors
+Facilities Operations (Physical Plant - HVAC)
+Facilities Operations and Development
+Environmental
+Security/Fire Prevention Patrol
+Security/Fire Prevention Fire Alarms
+Security/Fire Prevention Wexner Center
+Student Safety Services (foot patrol)
+Student Safety Services (escorts)
+University 1 common (monitored by police)
+University 2 common (monitored by police)
+Covelli Center 1
+Covelli Center 2
+Fawcett Center 1
+Fawcett Center 2
+Schottenstein Center - Parking
+Schottenstein Center - Dispatch / Guest Services
+Schottenstein Center - First Aid
+Schottenstein Center - Custodians
+Schottenstein Center - Security
+Schottenstein Center - Operations
+Event Fire/EMS
+Classroom Learning Support 1
+Classroom Learning Support 2
+Classroom Learning Support 3
+Classroom Learning Support 4
+Classroom Learning Support 5
+Library
+Physical Plant operations
+EVents
+Police Operations
+Police 7
+Communications 1
+District 1 - Maintenance 3
+District 1 - Maintenance 4
+District 1 - EOC
+Northwoods Outpost Operations
+District 2 - Maintenance 3
+District 2 - Maintenance 4
+District 2 - EOC
+District 3 - Maintenance 3
+District 3 - Maintenance 4
+District 3 - EOC
+District 4 - EOC
+District 4 - Bridge Operations
+District 4 -  East Operations
+District 4 - West Operations
+District 5 - Maintenance 3
+District 5 - Maintenance 4
+District 5 - EOC
+District 6 - EOC
+District 7 - Maintenance 3
+District 7 - EOC
+District 8 - Maintenance 4
+District 8 - EOC
+District 9 - Maintenance 3
+District 9 - Maintenance 4
+District 9 - EOC
+District 10 - Maintenance 3
+District 10 - Maintenance 4
+District 10 - EOC
+District 11 - Maintenance 3
+District 11 - Maintenance 4
+District 11 - EOC
+District 12 - EOC
+Central Office Maintenance 5
+Central Office Maintenance 6
+District 6 - Traffic Operations

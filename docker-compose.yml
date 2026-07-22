@@ -1,0 +1,14 @@
+services:
+  openmhz-radio:
+    build: .
+    image: brgjr10/radioapp:latest
+    container_name: radioapp
+    ports:
+      - "5050:5050"
+    environment:
+      OM_API: "https://api.openmhz.com"
+      OM_SYSTEM: "marcs_sc"
+      OM_ALLOW_DIRECT: "1"
+      ALLOW_PRIVATE_PROXY: "0"
+      HTTPS_PFX_PASSWORD: "<PFX_PASSWORD>"
+    restart: unless-stopped

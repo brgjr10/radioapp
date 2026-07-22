@@ -1,0 +1,47 @@
+name: openmhz-radio
+services:
+  openmhz-radio:
+    build:
+      context: /tmp/casaos-compose-app-3958240283
+      dockerfile: Dockerfile
+    cpu_shares: 90
+    command: ["node", "serve.js"]
+    container_name: radioapp
+    deploy:
+      resources:
+        limits:
+          memory: 16541384704
+        reservations:
+          devices: []
+    environment:
+      - ALLOW_PRIVATE_PROXY=0
+      - HTTPS_PFX_PASSWORD=<PFX_PASSWORD>
+      - OM_ALLOW_DIRECT=1
+      - OM_API=https://api.openmhz.com
+      - OM_SYSTEM=marcs_sc
+    image: brgjr10/radioapp:latest
+    labels:
+      icon: https://cdn-icons-png.flaticon.com/512/4450/4450073.png
+    ports:
+      - target: 5050
+        published: "5050"
+        protocol: tcp
+    restart: unless-stopped
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://cdn-icons-png.flaticon.com/512/4450/4450073.png
+  index: /
+  is_uncontrolled: false
+  port_map: "5050"
+  scheme: https
+  store_app_id: openmhz-radio
+  title:
+    custom: OpenMHz Radio
+    en_us: openmhz-radio

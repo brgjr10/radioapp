@@ -1,0 +1,14 @@
+{
+  "name": "openmhz-activity-monitor",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Direct client for OpenMHz activity monitoring. The browser connects straight to OpenMHz with no host backend.",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

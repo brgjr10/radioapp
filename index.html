@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenMHz Activity Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.8.1/dist/socket.io.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="banner" class="banner hidden"></div>
+
+  <main class="layout">
+    <section class="panel activity">
+      <div class="panel-head">
+        <h2>Talkgroup Activity</h2>
+        <div class="bulk" id="bulkBar">
+          <button class="btn small" data-bulk="all" type="button">All</button>
+          <button class="btn small" data-bulk="none" type="button">None</button>
+        </div>
+      </div>
+
+      <div class="filters">
+          <input id="search" type="search" placeholder="Search name, description, or number…" autocomplete="off">
+        <select id="sort">
+          <option value="activity">Sort: Most active (24h)</option>
+          <option value="idle">Sort: Least recently used</option>
+          <option value="name">Sort: Name (A–Z)</option>
+          <option value="num">Sort: Number</option>
+        </select>
+        <label class="chk"><input type="checkbox" id="enabledOnly" checked> Listening only</label>
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+        </select>
+      </div>
+
+      <div class="legend">
+        <span>Activity (calls in last 24h)</span>
+        <div class="bar-sample"></div>
+        <span class="muted">low → high</span>
+      </div>
+
+      <div id="tgList" class="tg-list">
+        <div class="empty">Connect to a system to load talkgroups…</div>
+      </div>
+    </section>
+
+    <aside class="panel side">
+      <div class="panel-head map-head">
+        <h2>Call Map</h2>
+        <div class="side-toggles">
+          <label class="chk"><input type="checkbox" id="mapFollow" checked> Follow playing</label>
+          <button class="btn small" id="mapClear" type="button">Clear</button>
+        </div>
+      </div>
+      <div id="map" class="map"></div>
+
+      <div class="nowplaying" id="nowPlaying">
+        <div class="np-empty">Nothing playing</div>
+      </div>
+
+      <div class="panel-head">
+        <h2>Live Feed</h2>
+        <div class="side-toggles">
+          <label class="chk"><input type="checkbox" id="autoplay" checked> Autoplay</label>
+          <label class="chk"><input type="checkbox" id="eq" checked> EQ</label>
+          <label class="chk"><input type="checkbox" id="focusMode" checked> Focus</label>
+        </div>
+      </div>
+      <div id="feed" class="feed">
+        <div class="empty">Waiting for calls…</div>
+      </div>
+    </aside>
+  </main>
+
+  <audio id="audio" preload="none"></audio>
+  <script src="ohio-cities.js?v=1"></script>
+  <script src="app.js?v=5"></script>
+</body>
+</html>

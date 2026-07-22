@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0e1116">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="OpenMHz">
+  <meta name="description" content="Real-time radio scanner activity monitor">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <title>OpenMHz Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile.css">
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.8.1/dist/socket.io.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="banner" class="banner hidden"></div>
+
+  <header class="m-topbar">
+    <h1>OpenMHz</h1>
+      <div class="m-toggles">
+        <label class="chk"><input type="checkbox" id="autoplay" checked> Autoplay</label>
+        <label class="chk"><input type="checkbox" id="eq" checked> EQ</label>
+        <label class="chk"><input type="checkbox" id="focusMode" checked> Focus</label>
+        <label class="chk" id="drivingLabel"><input type="checkbox" id="drivingMode"> Driving Mode</label>
+      </div>
+  </header>
+
+  <main class="m-layout">
+    <section class="panel m-panel m-nowplaying">
+      <div class="nowplaying" id="nowPlaying">
+        <div class="np-empty">Nothing playing</div>
+      </div>
+      <nav class="m-tabs" id="tabs">
+        <button class="m-tab active" data-page="0">Live Feed</button>
+        <button class="m-tab" data-page="1">Talkgroups</button>
+      </nav>
+    </section>
+
+    <div class="m-swiper-track" id="swiper">
+      <section class="panel m-panel m-feed-panel" id="feedPage">
+        <div class="panel-head">
+          <h2>Live Feed</h2>
+        </div>
+        <div id="feed" class="feed">
+          <div class="empty">Waiting for calls…</div>
+        </div>
+      </section>
+
+      <section class="panel m-panel" id="talkgroupPage">
+        <div class="panel-head">
+          <h2>Talkgroups</h2>
+          <div class="bulk" id="bulkBar">
+            <button class="btn small" data-bulk="all" type="button">All</button>
+            <button class="btn small" data-bulk="none" type="button">None</button>
+          </div>
+        </div>
+
+        <div class="m-filters">
+          <input id="search" type="search" placeholder="Search talkgroups…" autocomplete="off">
+          <select id="sort">
+            <option value="activity">Most active</option>
+            <option value="idle">Least recent</option>
+            <option value="name">Name A–Z</option>
+            <option value="num">Number</option>
+          </select>
+          <label class="chk"><input type="checkbox" id="enabledOnly" checked> Listening only</label>
+          <select id="categoryFilter">
+            <option value="">All categories</option>
+          </select>
+        </div>
+
+        <div class="legend">
+          <span>Activity (calls in last 24h)</span>
+          <div class="bar-sample"></div>
+          <span class="muted">low → high</span>
+        </div>
+
+        <div id="tgList" class="tg-list">
+          <div class="empty">Loading talkgroups…</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <audio id="audio" preload="none"></audio>
+  <script src="ohio-cities.js?v=1"></script>
+  <script src="app.js?v=2"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
