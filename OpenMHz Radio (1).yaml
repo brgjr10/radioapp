@@ -15,7 +15,6 @@ services:
           devices: []
     environment:
       - ALLOW_PRIVATE_PROXY=0
-      - HTTPS_PFX_PASSWORD=<PFX_PASSWORD>
       - OM_ALLOW_DIRECT=1
       - OM_API=https://api.openmhz.com
       - OM_SYSTEM=marcs_sc
@@ -40,7 +39,7 @@ x-casaos:
   index: /
   is_uncontrolled: false
   port_map: "5050"
-  scheme: https
+  scheme: http
   store_app_id: openmhz-radio
   title:
     custom: OpenMHz Radio
