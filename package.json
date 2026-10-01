@@ -6,7 +6,7 @@
   "main": "serve.js",
   "scripts": {
     "start": "node --env-file-if-exists=.env serve.js",
-    "test": "node --test test/"
+    "test": "node --test \"test/*.test.js\""
   },
   "engines": {
     "node": ">=20.12.0"
