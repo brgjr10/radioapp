@@ -15,4 +15,8 @@ RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001 -G nodejs
 USER nodejs
 
-CMD ["node", "serve.js"]
+# --env-file-if-exists matches package.json "start": a developer-supplied .env is
+# picked up when it exists and silently ignored when it does not, so the image
+# still starts with no .env at all. A real environment variable still wins over
+# the file. Requires Node >= 20.12; node:20-alpine satisfies that.
+CMD ["node", "--env-file-if-exists=.env", "serve.js"]

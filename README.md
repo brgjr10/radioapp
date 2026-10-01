@@ -19,11 +19,19 @@ OpenMHz radio scanner activity monitor and audio streaming app. Built for trunke
 ## Running
 
 ```bash
-node serve.js
+npm start
 ```
 
 Opens on `http://localhost:5050`. There are no runtime dependencies — the app is
 a static PWA plus a small Node file server.
+
+`npm start` runs `node --env-file-if-exists=.env serve.js`, so a `.env` in the
+repo root is picked up automatically. `--env-file-if-exists` (Node ≥ 20.12)
+means a missing `.env` is a warning rather than a fatal error, so the server
+starts with or without one. A real environment variable always wins over the
+file, so `PORT=5099 npm start` still overrides `PORT=5050`. Copy
+`.env.example` to `.env` to get started; it is gitignored and excluded from the
+Docker image.
 
 ```bash
 npm test
@@ -38,9 +46,12 @@ docker compose up -d
 ```
 
 The container publishes plain HTTP on 5050. Put TLS on a reverse proxy rather
-than in the app: the HTTPS branch needs a PKCS#12 bundle plus its passphrase, and
-`server.key` / `server.crt` are gitignored and dockerignored, so neither is in
-the image.
+than in the app. `serve.js` has no HTTPS branch: it used to hand a PKCS#12
+bundle to `https.createServer` at module load, which threw `mac verify failure`
+and killed the process before it could listen, and `server.key` / `server.crt`
+are gitignored and dockerignored so neither is in the image anyway.
+`docker-compose.yml` passes a local `.env` through with `env_file:`, and the
+image entrypoint loads it the same way `npm start` does.
 
 ## Config
 

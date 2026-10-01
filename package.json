@@ -5,11 +5,11 @@
   "description": "Direct client for OpenMHz activity monitoring. The browser connects straight to OpenMHz with no host backend.",
   "main": "serve.js",
   "scripts": {
-    "start": "node serve.js",
+    "start": "node --env-file-if-exists=.env serve.js",
     "test": "node --test test/"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.12.0"
   },
   "dependencies": {}
 }
