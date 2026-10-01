@@ -9,6 +9,11 @@ const { spawnSync } = require('node:child_process');
 const repoRoot = path.join(__dirname, '..');
 const read = (f) => fs.readFileSync(path.join(repoRoot, f), 'utf8');
 const git = (...args) => spawnSync('git', ['-C', repoRoot].concat(args), { encoding: 'utf8' });
+// Comments explain why the code looks the way it does, so a source-shape guard
+// has to look at code only or it trips over its own documentation.
+const stripComments = (src) => src
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .replace(/(^|[^:])\/\/.*$/gm, '$1');
 
 // ---------- app.js persistence guards (RADIOAPP-010) ----------
 
@@ -122,6 +127,82 @@ test('the private key is still untracked and ignored, and was never committed (R
   assert.strictEqual(history.stdout.trim(), '', 'server.key must never have been committed');
 });
 
+test('the cert is untracked and on disk, because serve.js used to read it (RADIOAPP-016)', () => {
+  const tracked = git('ls-files', '--error-unmatch', 'server.crt');
+  assert.notStrictEqual(tracked.status, 0, 'server.crt must not be tracked');
+  assert.ok(fs.existsSync(path.join(repoRoot, 'server.crt')), 'server.crt must stay on disk');
+});
+
+// ---------- the HTTPS branch and .env loading (RADIOAPP-015, RADIOAPP-012) ----------
+
+test('serve.js cannot die at require time on a TLS bundle (RADIOAPP-015)', () => {
+  const src = stripComments(read('serve.js'));
+  // The old ternary ran https.createServer({pfx}) at module load, above the
+  // require.main guard, and threw "mac verify failure" before any handler.
+  for (const m of src.matchAll(/(\w+)\.createServer\(/g)) {
+    assert.strictEqual(m[1], 'http',
+      'serve.js must only ever construct the plain http server, found ' + m[0]);
+  }
+  assert.ok(!/HTTPS_PFX_PASSWORD|HTTPS_KEY|HTTPS_CERT/.test(src),
+    'the removed PKCS#12/PEM variables must not be read at all');
+  assert.ok(!/useHttps|https\.createServer/.test(src),
+    'no https branch may survive');
+  assert.match(src, /server = http\.createServer\(handleRequest\)/);
+  assert.match(stripComments(read('serve.js')), /http\.createServer\(handleRequest\)/);
+  assert.match(read('serve.js'), /TLS is terminated by the reverse proxy/,
+    'the listen log must state where TLS actually happens');
+});
+
+test('a bogus HTTPS_PFX_PASSWORD cannot reach the server any more (RADIOAPP-015)', () => {
+  const r = spawnSync(process.execPath, ['--env-file-if-exists=.env', 'serve.js'], {
+    cwd: repoRoot, encoding: 'utf8', timeout: 15000,
+    env: Object.assign({}, process.env, {
+      PORT: '0', HTTPS_PFX_PASSWORD: 'bogus-passphrase', HTTPS_KEY: './server.key',
+    }),
+  });
+  assert.ok(!/mac verify/i.test(r.stdout + r.stderr),
+    'the PKCS#12 mac verify failure must not be reachable');
+  assert.ok(!/ERR_CRYPTO|secure-context/.test(r.stdout + r.stderr),
+    'no TLS context may be constructed at all');
+});
+
+test('.env.example no longer advertises the deleted HTTPS variables (RADIOAPP-015)', () => {
+  const env = read('.env.example');
+  assert.ok(!/^HTTPS_(KEY|CERT|PFX_PASSWORD)=/m.test(env),
+    '.env.example must not document a variable the server ignores');
+  assert.ok(!/^HTTPS_(KEY|CERT|PFX_PASSWORD)/m.test(env),
+    '.env.example must not name the removed HTTPS variables as active config');
+  assert.match(env, /PROXY_ALLOW_HOSTS=/, 'the live proxy config must still be documented');
+  assert.match(env, /reverse proxy/i, '.env.example must say where TLS lives');
+});
+
+test('the documented .env remediation is actually wired up (RADIOAPP-012)', () => {
+  const pkg = JSON.parse(read('package.json'));
+  // serve.js tells the user to "set PROXY_ALLOW_HOSTS in .env". If nothing loads
+  // that file, following the documented remediation changes nothing.
+  assert.match(pkg.scripts.start, /--env-file-if-exists=\.env\b/,
+    'npm start must load .env via node --env-file-if-exists');
+  assert.ok(!/--env-file=\.env\b(?!-)/.test(pkg.scripts.start),
+    'bare --env-file hard-errors when .env is missing; use --env-file-if-exists');
+  // The container entrypoint and compose must reach the same file.
+  assert.match(read('Dockerfile'), /--env-file-if-exists=\.env\b/,
+    'the image CMD must load .env the same way');
+  assert.match(read('docker-compose.yml'), /env_file:/,
+    'compose must pass a .env through to the container');
+  // The flag needs Node >= 20.12; --env-file itself is 20.6, so the engines
+  // floor has to follow it or `npm start` breaks on the declared minimum.
+  assert.ok(/>=\s*20\.(1[2-9]|[2-9]\d)/.test(pkg.engines.node),
+    'engines.node must require the version that has --env-file-if-exists');
+});
+
+test('.env is never committed or baked into the image (RADIOAPP-012)', () => {
+  const tracked = git('ls-files', '--error-unmatch', '.env');
+  assert.notStrictEqual(tracked.status, 0, '.env must not be tracked');
+  const di = read('.dockerignore').split(/\r?\n/).map((s) => s.trim());
+  assert.ok(di.includes('.env'), '.dockerignore must exclude .env (the Dockerfile does COPY . .)');
+  assert.ok(di.includes('!.env.example'), '.dockerignore must keep .env.example in the image');
+});
+
 // ---------- configuration surface (RADIOAPP-009, RADIOAPP-024) ----------
 
 test('the hand-maintained compose file sets only env vars the server reads (RADIOAPP-009)', () => {
@@ -180,6 +261,13 @@ test('Brodie\'s untracked WIP files are still present and untouched (QA_REPORT s
     'dedupe-cities.js', 'list-unmapped.js', 'analyze-tgs.js', 'build-ohio-cities.js',
     'package.json', 'package-lock.json', '.gitignore', '.dockerignore',
     'docker-compose.yml', 'host-backend.js', 'smoketest.js',
+    // RADIOAPP-015 removed the broken HTTPS branch, so .env.example stopped
+    // documenting HTTPS_*/HTTPS_PFX_PASSWORD; the .env remediation (RADIOAPP-012)
+    // needs --env-file in the image entrypoint and in compose.
+    '.env.example', 'Dockerfile',
+    // The suite itself is part of the fix set: it gains a regression guard for
+    // every finding above, so it is expected to be dirty while a fix is in flight.
+    'test/serve.test.js', 'test/generators.test.js', 'test/hygiene.test.js',
   ];
   for (const line of dirty) {
     const f = line.slice(3).trim().replace(/^"/, '').replace(/"$/, '');

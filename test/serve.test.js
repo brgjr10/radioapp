@@ -5,6 +5,8 @@ const assert = require('node:assert');
 const http = require('node:http');
 const { spawn } = require('node:child_process');
 const path = require('node:path');
+const fs = require('node:fs');
+const { spawnSync } = require('node:child_process');
 
 const repoRoot = path.join(__dirname, '..');
 const serve = require(path.join(repoRoot, 'serve.js'));
@@ -278,4 +280,149 @@ test('live: security headers are absent from proxy responses but CORS is present
   assert.strictEqual(r.status, 400);
   assert.strictEqual(r.headers['access-control-allow-origin'], '*');
   assert.strictEqual(r.headers['access-control-max-age'], '600');
+});
+
+// ---------- end-to-end: .env really reaches hostAllowed() (RADIOAPP-012) ----------
+
+// serve.js tells the user to "set PROXY_ALLOW_HOSTS in .env". This asserts the
+// whole chain - a real .env on disk, loaded by --env-file-if-exists, parsed at
+// module load - actually changes hostAllowed(). Without it the documented fix is
+// a no-op.
+//
+// hostAllowed() is probed in a child process rather than through a live /proxy
+// request on purpose: the allow-list is checked before DNS, but the request that
+// follows would still need to resolve a real external host, which would make
+// this test fail on an offline box for reasons unrelated to the .env chain.
+// Requiring serve.js from a child loads it the way `npm start` does, without
+// binding a port.
+const PROBE = [
+  "const s = require('./serve.js');",
+  "console.log(JSON.stringify({",
+  "  allow: s.hostAllowed('api.openmhz.com'),",
+  "  deny: s.hostAllowed('evil.com'),",
+  "  denySub: s.hostAllowed('evil.com.api.openmhz.com.attacker.test'),",
+  "  listed: s.hostAllowed('sub.api.openmhz.com'),",
+  "}));",
+].join('\n');
+
+// Writes .env, probes hostAllowed, and always restores whatever was there.
+function probeHostAllowed(envBody, extraEnv) {
+  const envPath = path.join(repoRoot, '.env');
+  const had = fs.existsSync(envPath);
+  const saved = had ? fs.readFileSync(envPath) : null;
+  try {
+    fs.writeFileSync(envPath, envBody);
+    const r = spawnSync(process.execPath, ['--env-file-if-exists=.env', '-e', PROBE], {
+      cwd: repoRoot, encoding: 'utf8', timeout: 15000,
+      env: Object.assign({}, process.env, extraEnv || {}),
+    });
+    assert.strictEqual(r.status, 0, 'probe failed:\n' + r.stdout + r.stderr);
+    const line = String(r.stdout).trim().split(/\r?\n/).filter((l) => l.startsWith('{')).pop();
+    return JSON.parse(line);
+  } finally {
+    if (saved === null) fs.rmSync(envPath, { force: true });
+    else fs.writeFileSync(envPath, saved);
+  }
+}
+
+test('a real .env loaded by --env-file-if-exists tightens the proxy allow-list', () => {
+  const out = probeHostAllowed('PROXY_ALLOW_HOSTS=api.openmhz.com\n');
+  assert.strictEqual(out.allow, true, 'api.openmhz.com is on the list and must be allowed');
+  assert.strictEqual(out.deny, false, 'a host outside the list must be refused');
+  assert.strictEqual(out.listed, true, 'a subdomain of a listed host must be allowed');
+  assert.strictEqual(out.denySub, false,
+    'suffix-matching must not let "evil.com...api.openmhz.com" through');
+});
+
+test('a real environment variable still overrides .env', () => {
+  const out = probeHostAllowed('PROXY_ALLOW_HOSTS=api.openmhz.com\n',
+    { PROXY_ALLOW_HOSTS: '' });
+  assert.strictEqual(out.deny, true,
+    'an empty PROXY_ALLOW_HOSTS in the real environment must win over the file and stay fail-open');
+  assert.strictEqual(out.allow, true, 'the empty-list case is fail-open for every host');
+
+  const narrow = probeHostAllowed('PROXY_ALLOW_HOSTS=api.openmhz.com\n',
+    { PROXY_ALLOW_HOSTS: 'd1.iz2nn.com' });
+  assert.strictEqual(narrow.allow, false,
+    'the real env var replaces the list, it does not merge with the file');
+  assert.strictEqual(narrow.deny, false,
+    'and the file-only entry is gone too');
+});
+
+test('the server starts with a .env present and applies it (RADIOAPP-012)', async () => {
+  const envPath = path.join(repoRoot, '.env');
+  const had = fs.existsSync(envPath);
+  const saved = had ? fs.readFileSync(envPath) : null;
+  const p2 = await freePort();
+  fs.writeFileSync(envPath, 'PROXY_ALLOW_HOSTS=api.openmhz.com\n');
+  const child2 = spawn(process.execPath, ['--env-file-if-exists=.env', 'serve.js'], {
+    cwd: repoRoot,
+    env: Object.assign({}, process.env, { PORT: String(p2) }),
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  child2.stderr.on('data', (d) => process.stderr.write('[env-test] ' + d));
+  let banner = '';
+  child2.stdout.on('data', (d) => { banner += d; });
+  child2.stderr.on('data', (d) => { process.stderr.write('[env-test] ' + d); });
+  try {
+    await new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error('server did not start with .env')), 10000);
+      child2.stdout.on('data', (d) => {
+        if (!String(d).includes('running at')) return;
+        clearTimeout(timer);
+        // The empty-list warning is emitted in the same listen callback, so give
+        // the process one turn to emit it before deciding it was absent.
+        setTimeout(resolve, 600);
+      });
+      child2.on('exit', (code) => { clearTimeout(timer); reject(new Error('exited early: ' + code)); });
+    });
+    // The empty-list warning firing would mean PROXY_ALLOW_HOSTS in the file was
+    // ignored - i.e. the documented remediation still would not work.
+    assert.ok(!/PROXY_ALLOW_HOSTS is empty/.test(banner),
+      'PROXY_ALLOW_HOSTS from .env must be applied; the empty-list warning fired');
+    // The app still serves, and the allow-list is live: evil.com is refused by
+    // hostAllowed before any DNS lookup happens.
+    assert.strictEqual((await rawRequest(p2, '/')).status, 200);
+    const denied = await rawRequest(p2, '/proxy?url=' + encodeURIComponent('https://evil.com/'));
+    assert.strictEqual(denied.status, 403);
+    assert.match(denied.body, /Forbidden host/);
+    assert.strictEqual(child2.exitCode, null, 'process must still be running');
+  } finally {
+    child2.kill();
+    if (saved === null) fs.rmSync(envPath, { force: true });
+    else fs.writeFileSync(envPath, saved);
+  }
+});
+
+test('the server starts with NO .env present and stays fail-open (RADIOAPP-015)', async () => {
+  const envPath = path.join(repoRoot, '.env');
+  assert.ok(!fs.existsSync(envPath), 'this test requires .env to be absent');
+  const p4 = await freePort();
+  // A bogus TLS bundle must be inert now that the HTTPS branch is gone.
+  const child4 = spawn(process.execPath, ['--env-file-if-exists=.env', 'serve.js'], {
+    cwd: repoRoot,
+    env: Object.assign({}, process.env, {
+      PORT: String(p4), HTTPS_PFX_PASSWORD: 'bogus-passphrase',
+      HTTPS_KEY: './server.key', HTTPS_CERT: './server.crt',
+    }),
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  let out = '';
+  child4.stdout.on('data', (d) => { out += d; });
+  child4.stderr.on('data', (d) => { out += d; });
+  try {
+    await new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error('server did not start: ' + out)), 10000);
+      child4.stdout.on('data', (d) => {
+        if (String(d).includes('running at')) { clearTimeout(timer); resolve(); }
+      });
+      child4.on('exit', (code) => { clearTimeout(timer); reject(new Error('exited early: ' + code + '\n' + out)); });
+    });
+    assert.ok(!/mac verify|ERR_CRYPTO|secure-context/.test(out),
+      'the old startup crash must be unreachable');
+    assert.strictEqual((await rawRequest(p4, '/')).status, 200);
+    assert.strictEqual(child4.exitCode, null, 'process must still be running');
+  } finally {
+    child4.kill();
+  }
 });
