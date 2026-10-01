@@ -6,8 +6,8 @@ services:
     ports:
       - "5050:5050"
     environment:
-      OM_API: "https://api.openmhz.com"
-      OM_SYSTEM: "marcs_sc"
-      OM_ALLOW_DIRECT: "1"
+      # The browser reads the API base and system from app.js, not from the
+      # environment, so OM_API/OM_SYSTEM/OM_ALLOW_DIRECT were removed: setting
+      # them here did nothing. See README.md "Config".
       ALLOW_PRIVATE_PROXY: "0"
     restart: unless-stopped
