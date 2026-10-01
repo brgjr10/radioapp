@@ -11,10 +11,14 @@ const root = __dirname;
 const port = process.env.PORT || 5050;
 const host = process.env.HOST || '0.0.0.0';
 
-const HTTPS_KEY = process.env.HTTPS_KEY || path.join(root, 'server.key');
-const HTTPS_CERT = process.env.HTTPS_CERT || path.join(root, 'server.crt');
-const HTTPS_PFX_PASSWORD = process.env.HTTPS_PFX_PASSWORD;
-const useHttps = HTTPS_PFX_PASSWORD && fs.existsSync(HTTPS_KEY);
+// TLS deliberately belongs on a reverse proxy, not here (RADIOAPP-015). The
+// HTTPS branch this file used to carry read a PKCS#12 bundle off disk at module
+// load and threw "mac verify failure" inside https.createServer, which killed the
+// process before the listen callback and before any error handler could run. The
+// variables it keyed off also contradicted .env.example, which documented
+// HTTPS_KEY as a PEM path. The container publishes plain HTTP on 5050 and
+// .dockerignore excludes server.key/server.crt, so the branch could never have
+// worked in the image regardless. See README.md "Docker".
 
 const ALLOW_PRIVATE_PROXY = process.env.ALLOW_PRIVATE_PROXY === '1';
 // Optional destination allow-list, off by default because the audio URLs come
@@ -217,62 +221,77 @@ function startProxy(req, res, t, addr) {
   }
   inFlight++;
 
-  const lib = t.protocol === 'https:' ? https : http;
-  const headers = {};
-  if (req.headers.range) headers.Range = req.headers.range;
-  if (req.headers['user-agent']) headers['User-Agent'] = req.headers['user-agent'];
-
-  const opts = {
-    protocol: t.protocol,
-    hostname: t.hostname,
-    port: t.port || (t.protocol === 'https:' ? 443 : 80),
-    path: t.pathname + t.search,
-    method: req.method,
-    headers,
-    timeout: 20000,
-    // Node 20+ happy-eyeballs resolves with {all:true} and wants an array
-    // back; the single-address form is still used on older runtimes. Pinning
-    // here is what stops a validated name being re-resolved mid-connection.
-    lookup: (hostname, options, cb) => {
-      if (options && options.all) cb(null, [addr]);
-      else cb(null, addr.address, addr.family);
-    },
-  };
-  if (t.protocol === 'https:') opts.servername = t.hostname;
-
+  // Declared before the request is built so the catch below can release the slot.
+  // release() is idempotent via settled, so a throw here followed by the
+  // response closing cannot decrement inFlight twice.
   let settled = false;
   const release = () => { if (!settled) { settled = true; inFlight--; } };
 
-  const preq = lib.request(opts, (pres) => {
-    const out = { ...CORS_HEADERS };
-    for (const k of PROXY_HEADERS) if (pres.headers[k]) out[k] = pres.headers[k];
-    if (pres.headers['access-control-allow-origin']) out['access-control-allow-origin'] = pres.headers['access-control-allow-origin'];
-    res.writeHead(pres.statusCode, out);
-    pres.pipe(res);
-    pres.on('error', (e) => {
-      console.error('[proxy] upstream stream error from ' + t.hostname + ': ' + e.message);
-      try { res.destroy(); } catch {}
-    });
-    pres.on('end', release);
-  });
+try {
+    const lib = t.protocol === 'https:' ? https : http;
+    const headers = {};
+    if (req.headers.range) headers.Range = req.headers.range;
+    if (req.headers['user-agent']) headers['User-Agent'] = req.headers['user-agent'];
 
-  preq.on('error', (e) => {
-    console.error('[proxy] request to ' + t.hostname + ' failed: ' + e.message);
-    if (res.headersSent) { try { res.destroy(); } catch {} }
-    else { res.writeHead(502); res.end('Proxy error: ' + e.message); }
-  });
-  preq.on('timeout', () => {
-    console.error('[proxy] timeout after 20s talking to ' + t.hostname);
-    preq.destroy();
+    const opts = {
+      protocol: t.protocol,
+      hostname: t.hostname,
+      port: t.port || (t.protocol === 'https:' ? 443 : 80),
+      path: t.pathname + t.search,
+      method: req.method,
+      headers,
+      timeout: 20000,
+      // Node 20+ happy-eyeballs resolves with {all:true} and wants an array
+      // back; the single-address form is still used on older runtimes. Pinning
+      // here is what stops a validated name being re-resolved mid-connection.
+      lookup: (hostname, options, cb) => {
+        if (options && options.all) cb(null, [addr]);
+        else cb(null, addr.address, addr.family);
+      },
+    };
+    if (t.protocol === 'https:') opts.servername = t.hostname;
+
+    const preq = lib.request(opts, (pres) => {
+      const out = { ...CORS_HEADERS };
+      for (const k of PROXY_HEADERS) if (pres.headers[k]) out[k] = pres.headers[k];
+      if (pres.headers['access-control-allow-origin']) out['access-control-allow-origin'] = pres.headers['access-control-allow-origin'];
+      res.writeHead(pres.statusCode, out);
+      pres.pipe(res);
+      pres.on('error', (e) => {
+        console.error('[proxy] upstream stream error from ' + t.hostname + ': ' + e.message);
+        try { res.destroy(); } catch {}
+      });
+      pres.on('end', release);
+    });
+
+    preq.on('error', (e) => {
+      console.error('[proxy] request to ' + t.hostname + ' failed: ' + e.message);
+      if (res.headersSent) { try { res.destroy(); } catch {} }
+      else { res.writeHead(502); res.end('Proxy error: ' + e.message); }
+    });
+    preq.on('timeout', () => {
+      console.error('[proxy] timeout after 20s talking to ' + t.hostname);
+      preq.destroy();
+      if (res.headersSent) { try { res.destroy(); } catch {} return; }
+      res.writeHead(504); res.end('Proxy timeout');
+    });
+    req.on('error', (e) => {
+      console.error('[proxy] client request error: ' + e.message);
+      try { preq.destroy(); } catch {}
+    });
+    res.on('close', release);
+    preq.end();
+  } catch (e) {
+    // http.request throws synchronously on some inputs (a header value carrying
+    // an illegal character, an unusable port). The slot was already taken
+    // above, so without this the request would strand inFlight forever, send no
+    // response, and after PROXY_MAX_CONCURRENT of them the proxy would answer
+    // "503 Proxy busy" to everything for the life of the process.
+    release();
+    console.error('[proxy] could not start request to ' + t.hostname + ': ' + e.message);
     if (res.headersSent) { try { res.destroy(); } catch {} return; }
-    res.writeHead(504); res.end('Proxy timeout');
-  });
-  req.on('error', (e) => {
-    console.error('[proxy] client request error: ' + e.message);
-    try { preq.destroy(); } catch {}
-  });
-  res.on('close', release);
-  preq.end();
+    res.writeHead(502); res.end('Proxy error');
+  }
 }
 
 function resolveStaticPath(rawPath) {
@@ -301,7 +320,11 @@ function handleStatic(req, res) {
   if (!resolved) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found'); return; }
 
   const filePath = path.normalize(path.join(root, resolved));
-  if (!filePath.startsWith(root)) { res.writeHead(403); res.end('Forbidden'); return; }
+  // root + path.sep, not root: a sibling directory whose name merely prefixes
+  // root (e.g. root + "-old") would otherwise pass a bare startsWith(root).
+  // Unreachable today because PUBLIC_FILES gates resolved, but the comparison
+  // itself was wrong.
+  if (!filePath.startsWith(root + path.sep)) { res.writeHead(403); res.end('Forbidden'); return; }
 
   fs.readFile(filePath, (err, data) => {
     if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found'); return; }
@@ -322,13 +345,19 @@ function handleRequest(req, res) {
   handleStatic(req, res);
 }
 
-const server = useHttps
-  ? https.createServer({ pfx: fs.readFileSync(HTTPS_KEY), passphrase: HTTPS_PFX_PASSWORD }, handleRequest)
-  : http.createServer(handleRequest);
+const server = http.createServer(handleRequest);
 
-server.on('clientError', (e) => {
-  console.error('[server] client error: ' + e.message);
-  if (e.code === 'ECONNRESET') return;
+server.on('clientError', (e, socket) => {
+  // Attaching this listener replaces Node's default behaviour, which is to
+  // destroy the socket. Doing nothing for any other error code than
+  // ECONNRESET (a client that hung up mid-request) therefore turned a malformed
+  // request into a socket that hangs open forever instead of being reset, so the
+  // socket is destroyed explicitly on the fallback path.
+  if (e.code !== 'ECONNRESET') {
+    console.error('[server] client error: ' + e.message);
+  }
+  if (socket.writable) socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');
+  socket.destroy();
 });
 
 function shutdown(signal) {
@@ -339,19 +368,27 @@ function shutdown(signal) {
 
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
-process.on('uncaughtException', (e) => {
-  console.error('[server] uncaught exception: ' + (e && e.stack ? e.stack : e));
-});
+
+// No uncaughtException handler is installed on purpose. A log-only handler keeps
+// the process alive in an undefined state: a throw between inFlight++ and the
+// release wiring would be swallowed, the response never sent, and the concurrency
+// slot never returned, so after PROXY_MAX_CONCURRENT such requests the proxy is
+// permanently "503 Proxy busy" with the process still up. startProxy now releases
+// its own slot on a synchronous throw, and letting any other uncaught throw reach
+// the default handler means a crash and a restart, which is recoverable in a way
+// that a silently wedged proxy is not.
 
 module.exports = { server, PUBLIC_FILES, BASE_HEADERS, resolveStaticPath, isPrivateHost, isPrivateAddr, hostAllowed, originAllowed };
 
 if (require.main === module) {
   server.listen(port, host, () => {
-    console.log('OpenMHz Activity Monitor running at ' + (useHttps ? 'https' : 'http') + '://' + host + ':' + port);
+    console.log('OpenMHz Activity Monitor running at http://' + host + ':' + port);
+    console.log('[server] TLS is terminated by the reverse proxy in front of this service, not here.');
     if (!PROXY_ALLOW_HOSTS.length) {
       console.warn('[server] WARNING: PROXY_ALLOW_HOSTS is empty, so the media proxy will relay from ANY public host.');
       console.warn('[server] Private and loopback destinations stay blocked, but a public hostname that resolves to an internal address is not (DNS rebinding).');
       console.warn('[server] Fix: set PROXY_ALLOW_HOSTS in .env to a comma-separated list of the OpenMHz audio hosts you use, e.g. PROXY_ALLOW_HOSTS=api.openmhz.com');
+      console.warn('[server] (.env is loaded by `npm start` via node --env-file-if-exists; a real environment variable still wins.)');
     }
   });
 }
