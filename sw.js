@@ -5,14 +5,19 @@ const APP_SHELL = [
   '/styles.css',
   '/mobile.css',
   '/app.js',
+  '/ohio-cities.js',
   '/icon.svg',
   '/manifest.webmanifest',
-  '/socket.io/socket.io.js',
 ];
 
 self.addEventListener('install', (event) => {
+  // addAll is atomic: one dead entry rejects the whole shell and the worker
+  // never activates. allSettled keeps a single unavailable asset from taking
+  // the offline mode down with it.
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
+    caches.open(CACHE_NAME).then((cache) =>
+      Promise.allSettled(APP_SHELL.map((url) => cache.add(url)))
+    )
   );
   self.skipWaiting();
 });
