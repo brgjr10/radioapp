@@ -2,23 +2,19 @@
  * A better way to browse a system: see the most active talkgroups, spot the
  * ones that have gone quiet, and mute the ones you don't want to hear.
  *
- * The browser does NOT talk to OpenMHz. A unified backend running on the host
- * (serve.js -> host-backend.js) makes every API call — talkgroups, history and
- * the live Socket.IO feed — and relays the results to every connected client
- * over the host's own Socket.IO server. Audio is streamed through the host's
- * same-origin /proxy so devices on slow links only pull from the (fast) host
- * and Web Audio (EQ) can still read the samples.
+ * The browser talks to OpenMHz directly — serve.js has no Socket.IO server and
+ * no host backend. Talkgroups, history and the live feed all come straight from
+ * api.openmhz.com with CORS on. Audio is the one exception: it is streamed
+ * through the host's same-origin /proxy so Web Audio (EQ) can read the samples
+ * even when the recording host blocks cross-origin requests.
  */
 
 'use strict';
 
 // ---------- config / state ----------
-// The host runs the unified backend and is the ONLY thing that talks to
-// OpenMHz. The client connects to the host over Socket.IO and receives the
-// talkgroup list, history, and live calls pushed from the host. apiBase and
-// system are supplied by the host (see the `snapshot` event) — the client
-// never calls OpenMHz directly. Audio is always streamed through the host's
-// same-origin /proxy endpoint.
+// The browser is the only OpenMHz client. apiBase and system are the values the
+// user can point at a different system; there is no host-side snapshot. Audio
+// is always streamed through the host's same-origin /proxy endpoint.
 let apiBase = 'https://api.openmhz.com';
 let system = 'marcs_sc';
 
@@ -328,10 +324,22 @@ function setBanner(msg, isErr) {
   b.classList.toggle('err', !!isErr);
 }
 
+// A quota-exceeded write must not throw out of the debounce callback and take
+// the save path down with it; staleness simply stops persisting.
+function writeLocal(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch (e) {
+    console.warn('[cache] could not persist ' + key + ' —', e.name + ':', e.message);
+    return false;
+  }
+}
+
 function saveEnabled() {
   const map = {};
   for (const num in talkgroups) map[num] = talkgroups[num].enabled;
-  localStorage.setItem('om_enabled_' + system, JSON.stringify(map));
+  writeLocal('om_enabled_' + system, map);
 }
 
 function loadEnabled() {
@@ -346,7 +354,7 @@ function saveCache() {
     const t = talkgroups[num];
     cache[num] = { lastSeen: t.lastSeen, total: t.total };
   }
-  localStorage.setItem('om_cache_' + system, JSON.stringify(cache));
+  writeLocal('om_cache_' + system, cache);
 }
 
 function loadCache() {
@@ -360,7 +368,7 @@ function saveTgConfig() {
     const tg = talkgroups[num];
     configs.push({ num, alpha: tg.alpha, description: tg.description });
   }
-  localStorage.setItem('om_tg_config_' + system, JSON.stringify(configs));
+  writeLocal('om_tg_config_' + system, configs);
 }
 
 function loadTgConfig() {
@@ -1672,4 +1680,12 @@ function initSwiper() {
   }, { passive: true });
 }
 
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+  navigator.serviceWorker.register('/sw.js').catch((e) => {
+    console.warn('[sw] registration failed:', e.message);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', init);
+registerServiceWorker();
