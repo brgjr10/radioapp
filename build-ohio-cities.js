@@ -88,5 +88,7 @@ const body = 'window.OHIO_PLACES = [\n' +
   places.map((p) => '  { n: ' + JSON.stringify(p.n) + ', la: ' + p.la + ', lo: ' + p.lo + ' }').join(',\n') +
   '\n];\n';
 
-fs.writeFileSync('ohio-cities.js', header + body);
+const tmp = 'ohio-cities.js.tmp';
+fs.writeFileSync(tmp, header + body);
+fs.renameSync(tmp, 'ohio-cities.js');
 console.log('Wrote ohio-cities.js:', cities.size, 'cities +', counties.size, 'counties =', places.length, 'places');
