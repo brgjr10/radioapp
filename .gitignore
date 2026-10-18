@@ -3,6 +3,8 @@ node_modules/
 __pycache__/
 venv/
 .env
+.env.*
+!.env.example
 .env.local
 .venv/
 
@@ -33,4 +35,14 @@ npm-debug.log*
 *.key
 *.p12
 *.pfx
+*.crt
 ACCESS.MD
+
+# Cross-project tooling artifacts — not source, and may carry internal paths
+wikijs_mappings.db
+*.db
+project.json
+
+# QA scratch
+.qa-tmp/
+

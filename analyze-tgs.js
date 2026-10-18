@@ -5,7 +5,7 @@ const path = require('path');
 const citiesSrc = fs.readFileSync(path.join(__dirname, 'ohio-cities.js'), 'utf8');
 const m = citiesSrc.match(/window\.OHIO_PLACES\s*=\s*(\[[\s\S]*?\]);/);
 if (!m) { console.error('Could not extract OHIO_PLACES'); process.exit(1); }
-const OHIO_PLACES = eval('(' + m[1] + ')');
+const OHIO_PLACES = JSON.parse(m[1].replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":'));
 
 // Load talkgroups.txt and extract names
 const html = fs.readFileSync(path.join(__dirname, 'talkgroups.txt'), 'utf8');
@@ -13,7 +13,8 @@ const tgMatches = [...html.matchAll(/<span class="text">([^<]+)<\/span>/g)];
 const talkgroups = tgMatches.map((_, i, arr) => {
   // Some spans may appear inside other markup; the regex matches all spans
   // We just want the text inside each <span class="text">
-  return arr[i][1].trim();
+  // Entity decoding must match list-unmapped.js or the two reports disagree
+  return arr[i][1].replace(/&amp;/g, '&').trim();
 });
 
 // deduplicate while preserving order

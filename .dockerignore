@@ -3,3 +3,26 @@ npm-debug.log
 .git
 .gitignore
 *.md
+
+# Secrets and local TLS material
+# .env is listed explicitly because the Dockerfile does `COPY . .`: without this
+# line any local .env is baked into the image layer, where .gitignore cannot
+# reach it and a later edit cannot remove it.
+.env
+.env.*
+!.env.example
+*.key
+*.crt
+*.pem
+*.pfx
+*.p12
+
+# Generated and local artifacts
+*.db
+*.log
+project.json
+talkgroups.txt
+unmapped-talkgroups.txt
+.qa-tmp
+.kilo
+ACCESS.MD

@@ -5,9 +5,16 @@ services:
     container_name: radioapp
     ports:
       - "5050:5050"
+    # Read on the host by the compose CLI and injected into the container, so
+    # PROXY_ALLOW_HOSTS and friends actually take effect. required:false so a
+    # checkout without a .env still starts. Values in `environment` below win
+    # over the file, and `docker compose run -e` wins over both.
+    env_file:
+      - path: .env
+        required: false
     environment:
-      OM_API: "https://api.openmhz.com"
-      OM_SYSTEM: "marcs_sc"
-      OM_ALLOW_DIRECT: "1"
+      # The browser reads the API base and system from app.js, not from the
+      # environment, so OM_API/OM_SYSTEM/OM_ALLOW_DIRECT were removed: setting
+      # them here did nothing. See README.md "Config".
       ALLOW_PRIVATE_PROXY: "0"
     restart: unless-stopped

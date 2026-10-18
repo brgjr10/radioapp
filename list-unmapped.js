@@ -1,7 +1,7 @@
 const fs = require('fs');
 const citiesSrc = fs.readFileSync('ohio-cities.js', 'utf8');
 const m = citiesSrc.match(/window\.OHIO_PLACES\s*=\s*(\[[\s\S]*?\]);/);
-const OHIO_PLACES = eval('(' + m[1] + ')');
+const OHIO_PLACES = JSON.parse(m[1].replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":'));
 
 const html = fs.readFileSync('talkgroups.txt', 'utf8');
 const raw = [...html.matchAll(/<span class="text">([^<]+)<\/span>/g)]
@@ -33,5 +33,6 @@ function matchPlace(text) {
 }
 
 const unmatched = tgs.filter((tg) => !matchPlace(tg));
-fs.writeFileSync('unmapped-talkgroups.txt', unmatched.join('\n') + '\n');
+fs.writeFileSync('unmapped-talkgroups.txt.tmp', unmatched.join('\n') + '\n');
+fs.renameSync('unmapped-talkgroups.txt.tmp', 'unmapped-talkgroups.txt');
 console.log('total talkgroups:', tgs.length, '| unmapped (no specific city):', unmatched.length);
