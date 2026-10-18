@@ -5,6 +5,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const net = require('net');
+const tls = require('tls');
 const dns = require('dns').promises;
 
 const root = __dirname;
@@ -294,6 +295,66 @@ try {
   }
 }
 
+// Socket.IO polling proxy: forwards /socket.io/* HTTP (long-polling) requests
+// to OpenHz's Socket.IO server so the browser never talks to api.openmhz.com
+// directly.
+function handleSocketPolling(req, res) {
+  setCors(res);
+  if (req.method === 'OPTIONS') { handleOptions(res); return; }
+  if (!originAllowed(req)) { res.writeHead(403); res.end('Forbidden origin'); return; }
+
+  const target = 'https://api.openmhz.com' + req.url;
+  let t;
+  try { t = new URL(target); }
+  catch { res.writeHead(400); res.end('Bad url'); return; }
+
+  resolveUpstream(t).then((addr) => {
+    if (!addr) { res.writeHead(403); res.end('Forbidden host'); return; }
+    startProxy(req, res, t, addr);
+  }).catch((e) => {
+    console.error('[socket-proxy] could not resolve: ' + e.message);
+    if (res.headersSent) { try { res.destroy(); } catch {} return; }
+    res.writeHead(502); res.end('Proxy error: ' + e.message);
+  });
+}
+
+// Socket.IO WebSocket upgrade proxy: forwards the upgrade handshake to
+// api.openmhz.com and then pipes the raw TLS socket to the client socket.
+function handleSocketUpgrade(req, socket, head) {
+  const target = 'https://api.openmhz.com' + req.url;
+  let t;
+  try { t = new URL(target); }
+  catch { socket.destroy(); return; }
+
+  resolveUpstream(t).then((addr) => {
+    if (!addr) { socket.destroy(); return; }
+
+    const upstream = tls.connect({
+      host: t.hostname,
+      port: t.port || 443,
+      servername: t.hostname,
+    }, () => {
+      let reqStr = req.method + ' ' + t.pathname + t.search + ' HTTP/1.1\r\n';
+      for (const [k, v] of Object.entries(req.headers)) {
+        if (k.toLowerCase() === 'host') continue;
+        reqStr += k + ': ' + v + '\r\n';
+      }
+      reqStr += 'Host: ' + t.hostname + '\r\n';
+      reqStr += '\r\n';
+      upstream.write(reqStr);
+      if (head.length) upstream.write(head);
+    });
+
+    upstream.on('data', (data) => { socket.write(data); });
+    upstream.on('end', () => socket.end());
+    upstream.on('error', () => socket.destroy());
+
+    socket.on('data', (data) => upstream.write(data));
+    socket.on('end', () => upstream.end());
+    socket.on('error', () => upstream.destroy());
+  }).catch(() => socket.destroy());
+}
+
 function resolveStaticPath(rawPath) {
   if (rawPath === '/') return '/index.html';
   if (rawPath === '/mobile' || rawPath === '/m') return '/mobile.html';
@@ -342,6 +403,8 @@ function handleStatic(req, res) {
 
 function handleRequest(req, res) {
   if (req.url.startsWith('/proxy')) { handleProxy(req, res); return; }
+  if (req.url.startsWith('/api-proxy')) { handleProxy(req, res); return; }
+  if (req.url.startsWith('/socket.io')) { handleSocketPolling(req, res); return; }
   handleStatic(req, res);
 }
 
@@ -357,6 +420,19 @@ server.on('clientError', (e, socket) => {
     console.error('[server] client error: ' + e.message);
   }
   if (socket.writable) socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');
+  socket.destroy();
+});
+
+server.on('upgrade', (req, socket, head) => {
+  if (req.url.startsWith('/socket.io')) {
+    try {
+      const u = new URL(req.url, 'http://localhost');
+      if (u.searchParams.get('transport') === 'websocket') {
+        handleSocketUpgrade(req, socket, head);
+        return;
+      }
+    } catch {} // not a Socket.IO upgrade, fall through
+  }
   socket.destroy();
 });
 

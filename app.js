@@ -188,6 +188,13 @@ function proxyUrl(u) {
   return '/proxy?url=' + encodeURIComponent(u);
 }
 
+// Route OpenHz REST API calls through the local same-origin /api-proxy so
+// they carry CORS headers that api.openmhz.com does not send. See the
+// /api-proxy handler in serve.js.
+function apiProxyUrl(path) {
+  return '/api-proxy?url=' + encodeURIComponent(apiBase + path);
+}
+
 function relTime(ms) {
   if (!ms) return 'never';
   const d = Date.now() - ms;
@@ -425,7 +432,7 @@ function countsFor(tg) {
 function connectSocket() {
   if (socket) { try { socket.close(); } catch {} socket = null; }
 
-  socket = io(apiBase, { transports: ['polling', 'websocket'], reconnection: true });
+  socket = io(window.location.origin, { path: '/socket.io', transports: ['polling', 'websocket'], reconnection: true });
 
   socket.on('connect', () => {
     connected = true;
@@ -468,7 +475,7 @@ function applyTgNames(map) {
 
 async function fetchDirectTalkgroups() {
   try {
-    const res = await fetch(`${apiBase}/${system}/talkgroups`, { mode: 'cors' });
+    const res = await fetch(apiProxyUrl(`/${system}/talkgroups`), { mode: 'cors' });
     if (!res.ok) throw new Error('talkgroups ' + res.status);
     const data = await res.json();
     applyTgNames(data.talkgroups || {});
@@ -482,8 +489,8 @@ async function fetchDirectHistory() {
     let cursor = null, pages = 0;
     while (pages < 100) {
       const url = cursor == null
-        ? `${apiBase}/${system}/calls?filter-type=all&filter-starred=false`
-        : `${apiBase}/${system}/calls/older?time=${cursor}&filter-type=all&filter-starred=false`;
+        ? apiProxyUrl(`/${system}/calls?filter-type=all&filter-starred=false`)
+        : apiProxyUrl(`/${system}/calls/older?time=${cursor}&filter-type=all&filter-starred=false`);
       const res = await fetch(url, { mode: 'cors' });
       if (!res.ok) throw new Error('calls ' + res.status);
       const data = await res.json();
