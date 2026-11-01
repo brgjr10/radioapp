@@ -7,6 +7,14 @@
  * api.openmhz.com with CORS on. Audio is the one exception: it is streamed
  * through the host's same-origin /proxy so Web Audio (EQ) can read the samples
  * even when the recording host blocks cross-origin requests.
+ *
+ * A same-origin /api-proxy and /socket.io proxy used to sit in front of the
+ * REST API and the live feed. They were removed: api.openmhz.com sits behind
+ * Cloudflare, which answers every non-browser request with a 403 JS-challenge
+ * page, so the proxy could never reach the feed it was added to forward, and
+ * the CORS problem it was added to solve does not exist — api.openmhz.com
+ * answers cross-origin browser requests fine. Browsers pass Cloudflare's
+ * challenge; Node http/https clients do not.
  */
 
 'use strict';
@@ -52,7 +60,7 @@ const DORMANT_MS = 7 * WINDOWS.h24;
 const INITIAL_VOLUME = 1.0;
 
 const CATEGORIES = [
-  { id: 'police', label: 'Police', description: 'Police', color: '#2f81f7', blacklist: ['cvsr','cn','rngr','metroparks','park','fire','jail','South Summit Fire COM 1','ss com1'], keywords: ['xecomm14','post98','post98','medina1','tac 1','police','patrol','enforcement', 'mac', 'pdisp','road','trooper','highway','pd','so','turnpike','secc'] },
+  { id: 'police', label: 'Police', description: 'Police', color: '#2f81f7', blacklist: ['cvsr','cn','rngr','metroparks','park','fire','jail','South Summit Fire COM 1','ss com1'], keywords: ['xecomm14','post98','medina1','tac 1','police','patrol','enforcement', 'mac', 'pdisp','road','trooper','highway','pd','so','turnpike','secc'] },
   { id: 'jail', label: 'Jail', description: 'Jail', color: '#a371f7', blacklist: [], keywords: ['jail','detention','prison','correction'] },
   { id: 'rta', label: 'Transportation', description: 'Transportation', color: '#3fb950', blacklist: [], keywords: ['rta','sarta'] },
   { id: 'fire', label: 'Fire', description: 'Fire', color: '#f85149', blacklist: [], keywords: ['fire','fd','f/e','f/e-1','fd1','fdpage','Fire Paging','ss com1','South Summit Fire COM 1'] },
@@ -188,11 +196,15 @@ function proxyUrl(u) {
   return '/proxy?url=' + encodeURIComponent(u);
 }
 
-// Route OpenHz REST API calls through the local same-origin /api-proxy so
-// they carry CORS headers that api.openmhz.com does not send. See the
-// /api-proxy handler in serve.js.
-function apiProxyUrl(path) {
-  return '/api-proxy?url=' + encodeURIComponent(apiBase + path);
+// OpenHz's REST API and Socket.IO live feed are reached directly from the
+// browser. api.openmhz.com sits behind Cloudflare, which serves a JS challenge
+// to any non-browser client; a same-origin proxy that fetches on the browser's
+// behalf is therefore blocked with 403, and the proxy cannot fix the CORS
+// problem it was added to solve either - api.openmhz.com answers cross-origin
+// browser requests fine. Browsers pass Cloudflare's challenge, direct fetches
+// do not.
+function apiUrl(path) {
+  return apiBase + path;
 }
 
 function relTime(ms) {
@@ -427,12 +439,13 @@ function countsFor(tg) {
 // The browser fetches talkgroups and history directly from OpenMHz.
 
 // ---------- live socket ----------
-// Connect directly to OpenMHz. No host backend; the browser fetches everything
-// directly with CORS enabled on the OpenMHz API.
+// Connect directly to OpenHz. api.openmhz.com is behind Cloudflare, which
+// serves a JS challenge to non-browser clients, so a same-origin proxy cannot
+// relay this feed. Browsers pass the challenge and the feed works cross-origin.
 function connectSocket() {
   if (socket) { try { socket.close(); } catch {} socket = null; }
 
-  socket = io(window.location.origin, { path: '/socket.io', transports: ['polling', 'websocket'], reconnection: true });
+  socket = io(apiBase, { transports: ['polling', 'websocket'], reconnection: true });
 
   socket.on('connect', () => {
     connected = true;
@@ -475,7 +488,7 @@ function applyTgNames(map) {
 
 async function fetchDirectTalkgroups() {
   try {
-    const res = await fetch(apiProxyUrl(`/${system}/talkgroups`), { mode: 'cors' });
+    const res = await fetch(apiUrl(`/${system}/talkgroups`), { mode: 'cors' });
     if (!res.ok) throw new Error('talkgroups ' + res.status);
     const data = await res.json();
     applyTgNames(data.talkgroups || {});
@@ -489,8 +502,8 @@ async function fetchDirectHistory() {
     let cursor = null, pages = 0;
     while (pages < 100) {
       const url = cursor == null
-        ? apiProxyUrl(`/${system}/calls?filter-type=all&filter-starred=false`)
-        : apiProxyUrl(`/${system}/calls/older?time=${cursor}&filter-type=all&filter-starred=false`);
+        ? apiUrl(`/${system}/calls?filter-type=all&filter-starred=false`)
+        : apiUrl(`/${system}/calls/older?time=${cursor}&filter-type=all&filter-starred=false`);
       const res = await fetch(url, { mode: 'cors' });
       if (!res.ok) throw new Error('calls ' + res.status);
       const data = await res.json();
@@ -1463,10 +1476,10 @@ function connect() {
     renderList();
   }
 
-  setBanner('Connecting to OpenMHz…');
-  console.info('[connect] client connecting directly to OpenMHz');
+setBanner('Connecting to OpenMHz…');
+  console.info('[connect] client connecting directly to OpenHz');
 
-  // The browser connects straight to OpenMHz, fetches talkgroups and history,
+  // The browser connects straight to OpenHz, fetches talkgroups and history,
   // and receives live calls over the Socket.IO live feed.
   connectSocket();
 
