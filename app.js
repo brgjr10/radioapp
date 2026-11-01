@@ -1021,9 +1021,16 @@ function initMap() {
 
   map = L.map(elMap, { zoomControl: true, attributionControl: true, preferCanvas: true })
     .setView(SYSTEM_CENTER, DEFAULT_ZOOM);
+  // OpenStreetMap's tile servers require a Referer header per their tile usage
+  // policy; without it every tile request is answered 403 and the map shows a
+  // blank "blocked" page. referrerPolicy: 'origin-when-cross-origin' is the
+  // most permissive value that still sends a Referer on same-origin tile
+  // fetches, which is what OSM asks for. attribution stays visible so the
+  // ODbL credit is not silently dropped.
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; OpenStreetMap contributors',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    referrerPolicy: 'origin-when-cross-origin',
   }).addTo(map);
 
   const follow = $('mapFollow');

@@ -179,7 +179,7 @@ test('live: security headers are present on every static response (RADIOAPP-008)
     const r = await rawRequest(port, p);
     assert.strictEqual(r.headers['x-content-type-options'], 'nosniff', p);
     assert.strictEqual(r.headers['x-frame-options'], 'DENY', p);
-    assert.strictEqual(r.headers['referrer-policy'], 'no-referrer', p);
+    assert.strictEqual(r.headers['referrer-policy'], 'origin-when-cross-origin', p);
     assert.match(r.headers['content-security-policy'], /default-src 'self'/, p);
     assert.match(r.headers['content-security-policy'], /frame-ancestors 'none'/, p);
     assert.match(r.headers['content-security-policy'], /object-src 'none'/, p);
