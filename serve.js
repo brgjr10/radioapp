@@ -5,7 +5,6 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const net = require('net');
-const tls = require('tls');
 const dns = require('dns').promises;
 
 const root = __dirname;
@@ -66,11 +65,16 @@ const BASE_HEADERS = {
     "base-uri 'self'",
     "object-src 'none'",
     "frame-ancestors 'none'",
-    "script-src 'self' https://cdn.jsdelivr.net",
+"script-src 'self' https://cdn.jsdelivr.net",
     "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
     "img-src 'self' data: blob: https://*.tile.openstreetmap.org",
+    // The browser talks to OpenHz directly: api.openmhz.com sits behind
+    // Cloudflare, which answers every non-browser request with a 403 JS-challenge
+    // page, so a same-origin proxy cannot relay this feed. Browsers pass the
+    // challenge and the feed works cross-origin, so connect-src points at the
+    // real API host rather than at this server.
     "connect-src 'self' https://api.openmhz.com wss://api.openmhz.com https://ipwho.is",
-    // Audio is fetched directly from the host OpenMHz names per call
+    // Audio is fetched directly from the host OpenHz names per call
     // (app.js sets isLocalApi = false), and that host is not knowable here, so
     // media-src stays open to https rather than guess an allow-list and break
     // playback. http: stays blocked.
@@ -295,66 +299,6 @@ try {
   }
 }
 
-// Socket.IO polling proxy: forwards /socket.io/* HTTP (long-polling) requests
-// to OpenHz's Socket.IO server so the browser never talks to api.openmhz.com
-// directly.
-function handleSocketPolling(req, res) {
-  setCors(res);
-  if (req.method === 'OPTIONS') { handleOptions(res); return; }
-  if (!originAllowed(req)) { res.writeHead(403); res.end('Forbidden origin'); return; }
-
-  const target = 'https://api.openmhz.com' + req.url;
-  let t;
-  try { t = new URL(target); }
-  catch { res.writeHead(400); res.end('Bad url'); return; }
-
-  resolveUpstream(t).then((addr) => {
-    if (!addr) { res.writeHead(403); res.end('Forbidden host'); return; }
-    startProxy(req, res, t, addr);
-  }).catch((e) => {
-    console.error('[socket-proxy] could not resolve: ' + e.message);
-    if (res.headersSent) { try { res.destroy(); } catch {} return; }
-    res.writeHead(502); res.end('Proxy error: ' + e.message);
-  });
-}
-
-// Socket.IO WebSocket upgrade proxy: forwards the upgrade handshake to
-// api.openmhz.com and then pipes the raw TLS socket to the client socket.
-function handleSocketUpgrade(req, socket, head) {
-  const target = 'https://api.openmhz.com' + req.url;
-  let t;
-  try { t = new URL(target); }
-  catch { socket.destroy(); return; }
-
-  resolveUpstream(t).then((addr) => {
-    if (!addr) { socket.destroy(); return; }
-
-    const upstream = tls.connect({
-      host: t.hostname,
-      port: t.port || 443,
-      servername: t.hostname,
-    }, () => {
-      let reqStr = req.method + ' ' + t.pathname + t.search + ' HTTP/1.1\r\n';
-      for (const [k, v] of Object.entries(req.headers)) {
-        if (k.toLowerCase() === 'host') continue;
-        reqStr += k + ': ' + v + '\r\n';
-      }
-      reqStr += 'Host: ' + t.hostname + '\r\n';
-      reqStr += '\r\n';
-      upstream.write(reqStr);
-      if (head.length) upstream.write(head);
-    });
-
-    upstream.on('data', (data) => { socket.write(data); });
-    upstream.on('end', () => socket.end());
-    upstream.on('error', () => socket.destroy());
-
-    socket.on('data', (data) => upstream.write(data));
-    socket.on('end', () => upstream.end());
-    socket.on('error', () => upstream.destroy());
-  }).catch(() => socket.destroy());
-}
-
 function resolveStaticPath(rawPath) {
   if (rawPath === '/') return '/index.html';
   if (rawPath === '/mobile' || rawPath === '/m') return '/mobile.html';
@@ -402,9 +346,7 @@ function handleStatic(req, res) {
 }
 
 function handleRequest(req, res) {
-  if (req.url.startsWith('/proxy')) { handleProxy(req, res); return; }
-  if (req.url.startsWith('/api-proxy')) { handleProxy(req, res); return; }
-  if (req.url.startsWith('/socket.io')) { handleSocketPolling(req, res); return; }
+  if (req.url.startsWith('/proxy') || req.url.startsWith('/api-proxy')) { handleProxy(req, res); return; }
   handleStatic(req, res);
 }
 
@@ -424,15 +366,10 @@ server.on('clientError', (e, socket) => {
 });
 
 server.on('upgrade', (req, socket, head) => {
-  if (req.url.startsWith('/socket.io')) {
-    try {
-      const u = new URL(req.url, 'http://localhost');
-      if (u.searchParams.get('transport') === 'websocket') {
-        handleSocketUpgrade(req, socket, head);
-        return;
-      }
-    } catch {} // not a Socket.IO upgrade, fall through
-  }
+  // No WebSocket proxy is needed: the browser talks to api.openmhz.com
+  // directly for the Socket.IO feed, and that host is behind Cloudflare, which
+  // serves a JS challenge to non-browser clients. Any upgrade that does arrive
+  // here is refused.
   socket.destroy();
 });
 

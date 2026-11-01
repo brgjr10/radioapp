@@ -65,9 +65,18 @@ Environment variables read by `serve.js`:
 | `PROXY_ALLOW_HOSTS` | *(empty)* | Comma-separated host allow-list for `/proxy`. Empty means any public host. Set it to lock the proxy to the recording hosts you expect |
 | `PROXY_MAX_CONCURRENT` | `8` | In-flight `/proxy` requests before `503` |
 
+The browser talks to OpenHz directly — there is no `/api-proxy` and no
+`/socket.io` proxy in `serve.js`. `api.openmhz.com` sits behind Cloudflare,
+which answers every non-browser request with a 403 JS-challenge page, so a
+same-origin proxy cannot relay the REST API or the live feed. The CORS problem
+a proxy was added to solve does not exist either: `api.openmhz.com` answers
+cross-origin browser requests fine. Browsers pass Cloudflare's challenge; Node
+`http`/`https` clients do not. The `/proxy` endpoint that remains is audio-only,
+and it is reached through `app.js`'s `proxyUrl()`, not through the API.
+
 `OM_API`, `OM_SYSTEM` and `OM_ALLOW_DIRECT` are **not** read by the server —
 they are historical. The browser reads the API base and system from
-`app.js:22-23` and talks to OpenMHz directly. They have been removed from
+`app.js:22-23` and talks to OpenHz directly. They have been removed from
 `docker-compose.yml`; the two CasaOS manifests still carry them because CasaOS
 regenerates those files from its own UI, and they are harmless because nothing
 reads them.
