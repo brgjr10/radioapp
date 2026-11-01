@@ -144,11 +144,14 @@ body { display: flex; flex-direction: column; min-height: 100vh; }
 .map .leaflet-tile { filter: brightness(.72) contrast(1.05) saturate(.85); }
 .map .leaflet-bar a,
 .map .leaflet-control-attribution {
-  background: var(--bg-2); color: var(--muted);
+  background: var(--bg-2) !important;
+  color: var(--muted) !important;
   border-color: var(--line) !important;
 }
-.map .leaflet-bar a { color: var(--txt); }
-.map .leaflet-control-attribution a { color: var(--accent-2); }
+.map .leaflet-control-attribution a {
+  color: var(--accent-2) !important;
+  text-decoration: underline;
+}
 .map .leaflet-popup-content-wrapper,
 .map .leaflet-popup-tip {
   background: var(--bg-2); color: var(--txt);

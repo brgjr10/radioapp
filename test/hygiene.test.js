@@ -265,6 +265,8 @@ test('Brodie\'s untracked WIP files are still present and untouched (QA_REPORT s
     // rewrites CRLF->LF on read; they show as fully-modified on every checkout
     // and are not part of any fix in flight.
     'ohio-cities.js', 'unmapped-talkgroups.txt',
+    // Map tile attribution styling for the dark theme (RADIOAPP-008).
+    'styles.css',
   ];
   for (const line of dirty) {
     const f = line.slice(3).trim().replace(/^"/, '').replace(/"$/, '');

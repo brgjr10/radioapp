@@ -59,7 +59,14 @@ const PUBLIC_FILES = new Set([
 const BASE_HEADERS = {
   'x-content-type-options': 'nosniff',
   'x-frame-options': 'DENY',
-  'referrer-policy': 'no-referrer',
+  // origin-when-cross-origin, not no-referrer: OpenStreetMap's tile servers
+  // answer every tile request with 403 unless a Referer is present, and a
+  // no-referrer policy strips the Referer from those cross-origin fetches, so
+  // the map renders as a blank "blocked" page. origin-when-cross-origin still
+  // sends the origin as the Referer on cross-origin requests, which is what
+  // OSM's tile usage policy requires, while keeping the full URL out of
+  // cross-origin requests.
+  'referrer-policy': 'origin-when-cross-origin',
   'content-security-policy': [
     "default-src 'self'",
     "base-uri 'self'",
