@@ -7,8 +7,7 @@
 
 OpenMHz radio scanner activity monitor and audio streaming app. Built for trunked radio systems with talkgroup filtering, history browsing, map plotting, and Web Audio EQ.
 
-<img width="1577" height="725" alt="image" src="https://github.com/user-attachments/assets/be48d112-3ccd-4e85-8195-92a4517f994d" />
-<img width="300" height="572" alt="image" src="https://github.com/user-attachments/assets/3243b6e8-9172-46c9-a086-4ecf3c08b037" />
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/4c6ddfc4-2bbc-42e8-9d48-80ae916e727a" />
 
 ## Stack
 
