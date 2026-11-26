@@ -78,6 +78,7 @@ const CATEGORY_OTHER_COLOR = '#8b97a7';
 // deterministically around SYSTEM_CENTER (a stable spot per talkgroup) so the
 // map is still useful before you fill this in.
 const SYSTEM_CENTER = [41.0814, -81.519];  // Akron / Summit County, OH (marcs_sc)
+const BRIDGE_URL = (typeof window !== 'undefined' && window.BRIDGE_URL) || '';
 const DEFAULT_ZOOM = 10;
 const MAP_SPREAD = 0.16;        // ~degrees: jitter radius (retained for jitterLL)
 const MAX_MAP_MARKERS = 60;     // recent call dots kept on the map
@@ -535,6 +536,13 @@ function recordCall(call, isLive) {
     setTimeout(() => liveNow.delete(num), 4000);
     pushFeed(call);
     addCallToMap(call);
+    if (BRIDGE_URL) {
+      try {
+        const _tgLoc = resolveTg(num);
+        const _payload = Object.assign({}, call, { lat: _tgLoc.la, lon: _tgLoc.lo });
+        fetch(BRIDGE_URL.replace(/\/$/,'')+'/api/radio-call', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(_payload)}).catch(()=>{});
+      } catch (e) {}
+    }
     // Autoplay new live calls (pump() picks the next one chronologically from
     // the feed), but skip muted talkgroups so silent/control channels don't
     // eat up listening time.
